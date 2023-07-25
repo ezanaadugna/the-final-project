@@ -9,7 +9,7 @@ var cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var chatgeneratorRouter = require("./routes/generatechat");
+var generatechatRouter = require("./routes/generatechat");
 
 var app = express();
 

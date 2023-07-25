@@ -3,6 +3,6 @@ var router = express.Router();
 
 const BuildingController = require("../controllers/buildingController");
 
-router.get("/", BuildingController.generateChat);
+router.get("/", BuildingController.promptBuilder);
 
 module.exports = router;
