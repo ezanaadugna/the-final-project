@@ -7,7 +7,7 @@ const Building = () => {
 
   const onSubmit = async () => {
     try {
-      const response = await fetch("/chat", {
+      const response = await fetch('https://your-backend-server.com/api/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ const Building = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Name your fav building</Text>
+      <Text style={styles.title}>Name my pet</Text>
       <TextInput
         style={styles.input}
         placeholder="Enter an building"
@@ -38,7 +38,7 @@ const Building = () => {
         onChangeText={(text) => setbuildingInput(text)}
       />
       <TouchableOpacity style={styles.button} onPress={onSubmit}>
-        <Text style={styles.buttonText}>Generate Pick up Line</Text>
+        <Text style={styles.buttonText}>Generate names</Text>
       </TouchableOpacity>
       <Text style={styles.result}>{result}</Text>
     </View>

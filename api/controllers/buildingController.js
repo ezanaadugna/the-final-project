@@ -5,7 +5,7 @@ const PromptBuilder = require("../models/promptbuilder");
 
 
 const BuildingController = {
-    generateExcuse: async (req, res) => {
+    generateChat: async (req, res) => {
       const promptBuilder = new PromptBuilder();
       try {
         const buildingName = req.query.buildingName; // Check if this value is not empty
