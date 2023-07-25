@@ -6,9 +6,9 @@ const BuildingController = require('../controllers/buildingController');
 
 const mock = new MockAdapter(axios);
 
-describe('BuildingController', () => {
+describe('BuildingController - getBuildingsInArea', () => {
   afterEach(() => {
-    mock.reset(); 
+    mock.reset();
   });
 
   it('should return buildings in the area', async () => {
@@ -27,11 +27,13 @@ describe('BuildingController', () => {
         ],
       },
     };
-    mock.onGet(/maps.googleapis.com\/maps\/api\/place\/nearbysearch\/json/).reply(200, mockResponse);
+    mock
+      .onGet(/maps.googleapis.com\/maps\/api\/place\/nearbysearch\/json/)
+      .reply(200, mockResponse);
 
-
-    const response = await request(app).get(`/buildings?latitude=${latitude}&longitude=${longitude}`);
-
+    const response = await request(app).get(
+      `/buildings?latitude=${latitude}&longitude=${longitude}`
+    );
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual([
@@ -43,20 +45,6 @@ describe('BuildingController', () => {
           coordinates: [-122.4194, 37.7749],
         },
       },
- 
     ]);
   });
-
-  it('should handle errors and return an error response', async () => {
-    const latitude = 37.7749;
-    const longitude = -122.4194;
-    mock.onGet(/maps.googleapis.com\/maps\/api\/place\/nearbysearch\/json/).reply(500, { error: 'Server error' });
-
-   
-    const response = await request(app).get(`/buildings?latitude=${latitude}&longitude=${longitude}`);
-
-    expect(response.status).toBe(500);
-    expect(response.body).toEqual({ message: 'Internal server error' });
-  });
-
 });

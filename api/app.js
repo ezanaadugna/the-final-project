@@ -21,6 +21,6 @@ app.use(cors());
 //app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/buildings', BuildingController.getBuildingsInArea);
-app.get('/buildings/:id', BuildingController.getBuildingDetails);
+//app.get('/buildings/:id', BuildingController.getBuildingDetails);
 
 module.exports = app;

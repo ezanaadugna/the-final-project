@@ -1,5 +1,6 @@
 const axios = require('axios'); 
 const app = require('../app');
+require('dotenv').config();
 
 
 const BuildingController = {
@@ -8,12 +9,12 @@ const BuildingController = {
         try {
           const { latitude, longitude } = req.query; 
     
-          const apiKey = 'AIzaSyA9ZlYjSDRTLzli0m0ZZw09kXzq7pkN98w';
+          const apiKey = process.env.GOOGLE_MAPS_API_KEY; 
           const radius = 5000; 
           const placeType = 'museum|art_gallery|tourist_attraction|point_of_interest|historical_site|church|cathedral|synagogue|mosque|historical_monument|landmark|archaeological_site'; 
     
           const response = await axios.get(
-            `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${radius}&type=${placeType}&key=${AIzaSyA9ZlYjSDRTLzli0m0ZZw09kXzq7pkN98wy}`
+            `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${radius}&type=${placeType}&key=${apiKey}`
           );
         
           const buildings = response.data.results.map((result) => ({
@@ -32,12 +33,14 @@ const BuildingController = {
           return res.status(500).json({ message: 'Internal server error' });
         }
       },
+    };
     
+/*
       getBuildingDetails: async (req, res) => {
         try {
           const placeId = req.params.id; 
     
-          const apiKey = 'AIzaSyA9ZlYjSDRTLzli0m0ZZw09kXzq7pkN98w';
+          const apiKey = process.env.GOOGLE_MAPS_API_KEY; ;
           const response = await axios.get(
             `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${apiKey}`
           );
@@ -62,5 +65,6 @@ const BuildingController = {
         }
       },
     };
+*/
 
 module.exports = BuildingController;
