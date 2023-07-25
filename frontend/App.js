@@ -1,5 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import MapView from 'react-native-maps';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export default function App() {
   return (
