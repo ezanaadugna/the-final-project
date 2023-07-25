@@ -22,6 +22,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/generatechat", chatgeneratorRouter);
+app.use("/generatechat", generatechatRouter);
 
 module.exports = app;
