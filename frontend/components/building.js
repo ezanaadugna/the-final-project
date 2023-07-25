@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
-const UserInput = () => {
+const Building = () => {
   const [animalInput, setAnimalInput] = useState('');
   const [result, setResult] = useState('');
 
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserInput;
+export default Building;
