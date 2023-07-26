@@ -12,8 +12,8 @@ describe('BuildingController - getBuildingsInArea', () => {
   });
 
   it('should return buildings in the area', async () => {
-    const latitude = 37.7749;
-    const longitude = -122.4194;
+    const latitude = 51.5182;
+    const longitude = -0.1525;
     const mockResponse = {
       data: {
         results: [
@@ -21,7 +21,7 @@ describe('BuildingController - getBuildingsInArea', () => {
             name: 'Building 1',
             vicinity: 'Address 1',
             geometry: {
-              location: { lng: -122.4194, lat: 37.7749 },
+              location: { lng: -0.1525, lat: 51.5182 },
             },
           },
         ],
@@ -42,7 +42,7 @@ describe('BuildingController - getBuildingsInArea', () => {
         description: 'Address 1',
         location: {
           type: 'Point',
-          coordinates: [-122.4194, 37.7749],
+          coordinates: [-0.1525, 51.5182],
         },
       },
     ]);
