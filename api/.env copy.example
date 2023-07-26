@@ -1,3 +1,0 @@
-# Do not share your OpenAI API key with anyone! It should remain a secret.
-OPENAI_API_KEY=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
-PORT=3000
