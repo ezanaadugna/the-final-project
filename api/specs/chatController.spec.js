@@ -1,24 +1,20 @@
 const { Configuration, OpenAIApi } = require("openai");
-const axios = require("axios");
-const MockAdapter = require("axios-mock-adapter");
+// const axios = require("axios");
+// const MockAdapter = require("axios-mock-adapter");
 const request = require("supertest");
 const app = require("../app");
 const chatController = require("../controllers/chatController");
 
-const mock = new MockAdapter(axios);
+// const mock = new MockAdapter(axios);
 
 jest.mock("openai", () => ({
   Configuration: jest.fn(),
   OpenAIApi: jest.fn(),
 }));
 
-jest.mock("axios");
+// jest.mock("axios");
 
 describe("chatController - getchats", () => {
-  afterEach(() => {
-    mock.reset();
-  });
-
   it("should return a pickup line", async () => {
     OpenAIApi.mockImplementationOnce(() => ({
       createChatCompletion: jest.fn().mockResolvedValueOnce({
