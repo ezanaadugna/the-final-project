@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
@@ -7,14 +8,33 @@ var cors = require("cors");
 
 // Set up routes 
 
+const BuildingController = require('./controllers/buildingController');
+const buildingRoutes = require('./routes/buildingRoutes')
 //var indexRouter = require("./routes/index");
 //var usersRouter = require("./routes/users");
 const chatRouter = require("./routes/chat");
+
 
 var app = express();
 
 // setup for receiving JSON
 
+app.use(cors());
+app.use('/api', buildingRoutes);
+
+app.get('/buildings', BuildingController.getBuildingsInArea);
+//app.get('/buildings/:id', BuildingController.getBuildingDetails);
+
+const http = require('http');
+
+const port = 3000; 
+const server = http.createServer((req, res) => {
+  res.end('Hello this is the building/maps team!');
+});
+
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
