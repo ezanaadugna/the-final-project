@@ -11,12 +11,20 @@ const BuildingController = {
     
           const apiKey = process.env.GOOGLE_MAPS_API_KEY; 
           const radius = 5000; 
-          const placeType = 'museum|art_gallery|tourist_attraction|point_of_interest|historical_site|church|cathedral|synagogue|mosque|historical_monument|landmark|archaeological_site'; 
+          const placeType = 'church';
     
-          const response = await axios.get(
-            `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${radius}&type=${placeType}&key=${apiKey}`
-          );
-        
+          const apiUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${radius}&type=${placeType}&key=${apiKey}`;
+          console.log('API URL:', apiUrl);
+
+          //'museum|art_gallery|tourist_attraction|point_of_interest|historical_site|church|cathedral|synagogue|mosque|historical_monument|landmark|archaeological_site'; 
+          const response = await axios.get(apiUrl);
+          console.log('Response from Google Maps API:', response.data);
+
+         const results = response.data.results;
+          if (!results || results.length === 0) {
+            return res.status(404).json({ message: 'No buildings found in the area' });
+          }
+
           const buildings = response.data.results.map((result) => ({
             name: result.name,
             description: result.vicinity,
