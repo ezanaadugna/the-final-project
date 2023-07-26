@@ -17,7 +17,7 @@ jest.mock("openai", () => ({
 describe("chatController - getchats", () => {
   it("should return a pickup line", async () => {
     OpenAIApi.mockImplementationOnce(() => ({
-      createChatCompletion: jest.fn().mockResolvedValueOnce({
+      createCompletion: jest.fn().mockResolvedValueOnce({
         data: {
           choices: [
             {

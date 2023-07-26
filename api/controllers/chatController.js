@@ -16,8 +16,8 @@ const ChatController = {
       });
 
       const openai = new OpenAIApi(configuration);
-      const chatCompletion = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
+      const chatCompletion = await openai.createCompletion({
+        model: "text-davinci-003",
         messages,
       });
 
