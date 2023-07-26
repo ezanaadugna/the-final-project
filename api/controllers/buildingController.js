@@ -14,11 +14,12 @@ const BuildingController = {
           const placeType = 'church';
     
           const apiUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${radius}&type=${placeType}&key=${apiKey}`;
+          // const apiUrl = `https://google.com`;
           console.log('API URL:', apiUrl);
 
           //'museum|art_gallery|tourist_attraction|point_of_interest|historical_site|church|cathedral|synagogue|mosque|historical_monument|landmark|archaeological_site'; 
           const response = await axios.get(apiUrl);
-          console.log('Response from Google Maps API:', response.data);
+          console.log('Response from Google Maps API:', response.data.results[0]);
 
          const results = response.data.results;
           if (!results || results.length === 0) {

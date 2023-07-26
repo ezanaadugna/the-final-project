@@ -2,7 +2,7 @@ const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
 const request = require('supertest');
 const app = require('../app'); 
-const BuildingController = require('../controllers/buildingController'); 
+const BuildingController = require('../controllers/buildingController');
 
 const mock = new MockAdapter(axios);
 
@@ -15,7 +15,7 @@ describe('BuildingController - getBuildingsInArea', () => {
     const latitude = 51.5182;
     const longitude = -0.1525;
     const mockResponse = {
-      data: {
+     
         results: [
           {
             name: 'Building 1',
@@ -25,10 +25,10 @@ describe('BuildingController - getBuildingsInArea', () => {
             },
           },
         ],
-      },
+      
     };
     mock
-      .onGet(/maps.googleapis.com\/maps\/api\/place\/nearbysearch\/json/)
+    .onGet(/maps.googleapis.com\/maps\/api\/place\/nearbysearch\/json/)      // .onGet('https://google.com')
       .reply(200, mockResponse);
 
     const response = await request(app).get(
