@@ -3,7 +3,7 @@ const router = express.Router();
 
 const ChatController = require("../controllers/chatController");
 
-router.get("/chat", ChatController.generateChat);
+router.get("/", ChatController.generateChat);
 
 // router.get('/chat', (req, res) => {
 //     res.send('Hello from the chat route!');

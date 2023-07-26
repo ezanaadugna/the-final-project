@@ -36,13 +36,13 @@ app.use("/chat", chatRouter);
 const http = require('http');
 
 const port = 3000; // Choose your desired port number
-const server = http.createServer((req, res) => {
-  res.end('Hello, this is your Node.js server! hello this is a building');
-});
+// const server = http.createServer((req, res) => {
+//   res.end('Hello, this is your Node.js server! hello this is a building');
+// });
 
-server.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// server.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+// });
 
 // catch 404 and forward to error handler, code to be ADDED HERE.
 
