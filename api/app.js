@@ -23,8 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use('/api', buildingRoutes);
-app.get('/buildings', BuildingController.getBuildingsInArea);
+app.use('/buildings', buildingRoutes);
+//app.get('/buildings', BuildingController.getBuildingsInArea);
 app.use("/chat", chatRouter);
 //app.get('/buildings/:id', BuildingController.getBuildingDetails);
 
