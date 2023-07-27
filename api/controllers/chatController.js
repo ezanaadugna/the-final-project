@@ -25,7 +25,7 @@ const ChatController = {
 
       const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: "Hello chatgpt, Can you give me an example of a pick up line based on the eiffel tower"}]
+        messages, 
         })
 
       console.log(completion.data.choices[0].message.content);

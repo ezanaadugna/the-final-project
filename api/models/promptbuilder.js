@@ -9,13 +9,14 @@ class PromptBuilder {
       throw new Error("Please provide a building name.");
     }
 
-    const systemContent = `Your purpose is to be a pick-up line generator. You should suggest a romantic fact or facts that can be used by architecture lovers as a pick-up line, based on the building name provided. Please follow the following instructions: 
-    - Provide a romantic fact that can be used by architecture lovers as a pick-up line using the building name '${name} ${description}'. This should be up to 3 lines long. Don't put it in quotations.`;
+    const systemContent = [{ role: "user", content:`Your purpose is to be a pick-up line generator. You should suggest a romantic fact or facts that can be used by architecture lovers as a pick-up line, based on the building name provided. Please follow the following instructions: 
+    - Provide a romantic fact that can be used by architecture lovers as a pick-up line using the building name '${name} ${description}'. This should be up to 3 lines long. Don't put it in quotations.`}];
+
 
     const prompt = systemContent;
     console.log(prompt);
     return prompt;
   }
 }
-
+    //[{ role: "user", content: "Hello chatgpt, Can you give me an example of a pick up line based on the eiffel tower"}]
 module.exports = PromptBuilder;
