@@ -4,7 +4,7 @@
 
 
 class PromptBuilder {
-  constructPrompt(buildingName = null) {
+  constructPrompt(name, location) {
     if (!buildingName) {
       throw new Error("Please provide a building name.");
     }
