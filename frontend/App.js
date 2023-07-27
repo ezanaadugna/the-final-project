@@ -15,11 +15,17 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Map" component={MapScreen} />
-          <Stack.Screen name="ArchitectureQuestion" component={ArchitectureQuestionScreen} />
-          <Stack.Screen name="YesScreen" component={YesScreen} />
-          <Stack.Screen name="NoScreen" component={NoScreen} />
         </Stack.Navigator>
       </NavigationContainer>
+      
+      <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="ArchitectureQuestion" component={ArchitectureQuestionScreen} />
+            <Stack.Screen name="YesScreen" component={YesScreen} />
+            <Stack.Screen name="NoScreen" component={NoScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+        
     </View>
   );
 };

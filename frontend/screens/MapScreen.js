@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   mapContainer: {
-    flex: 1,
+    height: 350,
   },
   map: {
     ...StyleSheet.absoluteFillObject,
