@@ -1,25 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import MapView from 'react-native-maps';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Building from './components/building';
+import MapScreen from './screens/MapScreen';
+import ArchitectureQuestionScreen from './screens/ArchitectureQuestionScreen';
+import NoScreen from './screens/NoScreen';
+import YesScreen from './screens/YesScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text>Click here to put in building name!</Text>
-      <Building />
-      <StatusBar style="auto" />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Map" component={MapScreen} />
+          <Stack.Screen name="ArchitectureQuestion" component={ArchitectureQuestionScreen} />
+          <Stack.Screen name="YesScreen" component={YesScreen} />
+          <Stack.Screen name="NoScreen" component={NoScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
+
+export default App;
