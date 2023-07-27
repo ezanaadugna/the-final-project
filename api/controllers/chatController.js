@@ -8,7 +8,6 @@ const ChatController = {
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-
     if (!configuration.apiKey) {
       res.status(500).json({
         error: {
@@ -19,25 +18,16 @@ const ChatController = {
     }
 
     try {
-
-
       const openai = new OpenAIApi(configuration);
 
-      const messages = [
-        {
-          role: "user",
-          content: "Can you give me an example of a pick up line based on the eiffel tower",
-        },
-      ];
+      const completion = await openai.createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: "Hello chatgpt, Can you give me an example of a pick up line based on the eiffel tower"}]
+        })
 
-      const completion = await openai.createCompletion({
-        model: "text-davinci-003",
-        messages,
-      });
+      console.log(completion.data.choices);
 
-      console.log(completion.data);
-
-      const chatResponse = Completion.data.choices[0].message.content;
+      const chatResponse = completion.data.choices[0].message.content;
       return res.status(200).json({ pickupline: chatResponse });
     } catch (error) {
       console.log(error);
