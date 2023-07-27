@@ -4,6 +4,12 @@ require("dotenv").config();
 
 const ChatController = {
   generateChat: async (req, res) => {
+
+    const configuration = new Configuration({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+
+
     if (!configuration.apiKey) {
       res.status(500).json({
         error: {
@@ -14,9 +20,7 @@ const ChatController = {
     }
 
     try {
-      const configuration = new Configuration({
-        apiKey: process.env.OPENAI_API_KEY,
-      });
+
 
       const openai = new OpenAIApi(configuration);
 
