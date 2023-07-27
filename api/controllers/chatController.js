@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { Configuration, OpenAIApi } = require("openai");
-const PromptBuilder = require('../models/promptBuilder');
+const PromptBuilder = require('../models/promptbuilder');
 
 const ChatController = {
   generateChat: async (req, res) => {
