@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
-const Building = () => {
+const Chat = () => {
   const [buildingInput, setbuildingInput] = useState('');
   const [result, setResult] = useState('');
 
   const onSubmit = async () => {
     try {
-      const response = await fetch("localhost:3000/chat", {
+      const response = await fetch("http://localhost:3000/chat", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Building;
+export default Chat;
