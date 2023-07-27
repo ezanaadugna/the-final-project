@@ -1,37 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, StyleSheet, PermissionsAndroid } from 'react-native';
-import MapView, { Marker, Circle } from 'react-native-maps';
-import Geolocation from '@react-native-community/geolocation';
+import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
+import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
+import axios from 'axios';
 
 const logoImage = require('../assets/logo.png'); // Replace with the actual path to your logo image
 
-export default function MapScreen() {
+const MapScreen = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
-  const [nearbyMonuments, setNearbyMonuments] = useState([]);
+  const [nearbyBuildings, setNearbyBuildings] = useState([]);
 
   useEffect(() => {
     // Request location permission if not granted
     const requestLocationPermission = async () => {
       try {
-        const granted = await PermissionsAndroid.request(
-          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
-        );
-        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-          // Get the current location
-          Geolocation.getCurrentPosition(
-            (position) => {
-              const { latitude, longitude } = position.coords;
-              setCurrentLocation({ latitude, longitude });
-              fetchNearbyMonuments(latitude, longitude);
-            },
-            (error) => {
-              console.error('Error getting current location:', error);
-            },
-            { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-          );
-        } else {
-          console.log('Location permission denied');
+        const { status } = await requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          console.log('Permission to access location was denied.');
+          return;
         }
+
+        // Get the current location
+        const location = await getCurrentPositionAsync({});
+        setCurrentLocation(location.coords);
       } catch (err) {
         console.warn('Error requesting location permission:', err);
       }
@@ -40,25 +31,22 @@ export default function MapScreen() {
     requestLocationPermission();
   }, []);
 
-  // Function to fetch nearby monuments
-  const fetchNearbyMonuments = async (latitude, longitude) => {
-    const searchRadius = 1000; // Set the search radius in meters
-    const searchTypes = 'tourist_attraction'; // Set the type of places to search for (e.g., 'tourist_attraction', 'museum', 'historical_site', etc.)
-
-    try {
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${searchRadius}&type=${searchTypes}&key=YOUR_API_KEY`
-      );
-      const data = await response.json();
-      if (data.results && data.results.length > 0) {
-        setNearbyMonuments(data.results);
-      } else {
-        setNearbyMonuments([]);
+  useEffect(() => {
+    // Function to fetch nearby buildings
+    const fetchNearbyBuildings = async (latitude, longitude) => {
+      try {
+        const response = await axios.get(`/buildings?latitude=${latitude}&longitude=${longitude}`);
+        setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
+      } catch (error) {
+        console.error('Error fetching nearby buildings:', error);
       }
-    } catch (error) {
-      console.error('Error fetching nearby monuments:', error);
+    };
+
+    // Fetch nearby buildings when currentLocation is set
+    if (currentLocation) {
+      fetchNearbyBuildings(currentLocation.latitude, currentLocation.longitude);
     }
-  };
+  }, [currentLocation]);
 
   return (
     <View style={styles.container}>
@@ -73,28 +61,51 @@ export default function MapScreen() {
 
       {/* Map */}
       <View style={styles.mapContainer}>
-        <MapView style={styles.map}>
-          {/* Marker for the current location */}
-          {currentLocation && (
+        {currentLocation && (
+          <MapView
+            style={styles.map}
+            initialRegion={{
+              latitude: currentLocation.latitude,
+              longitude: currentLocation.longitude,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+          >
+            {/* Marker for the current location */}
             <Marker coordinate={currentLocation} title="You are here" pinColor="blue" />
-          )}
 
-          {/* Markers for nearby monuments */}
-          {nearbyMonuments.map((monument, index) => (
-            <Marker
-              key={index}
-              coordinate={{
-                latitude: monument.geometry.location.lat,
-                longitude: monument.geometry.location.lng,
-              }}
-              title={monument.name}
-            />
-          ))}
-        </MapView>
+            {/* Markers for nearby buildings */}
+            {nearbyBuildings.map((building, index) => (
+              <Marker
+                key={index}
+                coordinate={{
+                  latitude: building.location.coordinates[1],
+                  longitude: building.location.coordinates[0],
+                }}
+                title={building.name}
+              />
+            ))}
+          </MapView>
+        )}
+      </View>
+
+      {/* List of nearby buildings */}
+      <View style={styles.buildingListContainer}>
+        <Text style={styles.listHeader}>Nearby Buildings</Text>
+        <FlatList
+          data={nearbyBuildings}
+          keyExtractor={(item) => item.placeId}
+          renderItem={({ item }) => (
+            <View style={styles.buildingListItem}>
+              <Text style={styles.buildingName}>{item.name}</Text>
+              <Text style={styles.buildingDescription}>{item.description}</Text>
+            </View>
+          )}
+        />
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -122,4 +133,24 @@ const styles = StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject,
   },
+  buildingListContainer: {
+    padding: 20,
+  },
+  listHeader: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  buildingListItem: {
+    marginBottom: 10,
+  },
+  buildingName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  buildingDescription: {
+    fontSize: 14,
+  },
 });
+
+export default MapScreen;
