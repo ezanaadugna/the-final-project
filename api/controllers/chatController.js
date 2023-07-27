@@ -25,7 +25,7 @@ const ChatController = {
         messages: [{ role: "user", content: "Hello chatgpt, Can you give me an example of a pick up line based on the eiffel tower"}]
         })
 
-      console.log(completion.data.choices);
+      console.log(completion.data.choices[0].message.content);
 
       const chatResponse = completion.data.choices[0].message.content;
       return res.status(200).json({ pickupline: chatResponse });
