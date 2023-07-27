@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-native-community/geolocation": "^3.0.6",
     "axios": "^1.4.0",
     "axios-mock-adapter": "^1.21.5",
     "cookie-parser": "^1.4.6",
