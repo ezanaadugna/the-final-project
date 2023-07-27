@@ -1,6 +1,5 @@
 const axios = require("axios");
 const { Configuration, OpenAIApi } = require("openai");
-require("dotenv").config();
 
 const ChatController = {
   generateChat: async (req, res) => {

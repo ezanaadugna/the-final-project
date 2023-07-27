@@ -1,6 +1,5 @@
 const axios = require('axios'); 
 const app = require('../app');
-require('dotenv').config();
 
 
 const BuildingController = {
