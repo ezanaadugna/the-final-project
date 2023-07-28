@@ -1,10 +1,34 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const BuildingScreen = () => {
+const BuildingScreen = ({ route }) => {
+  const { building } = route.params;
+  const navigation = useNavigation();
+
+  const handleGeneratePrompt = () => {
+    navigation.navigate('PromptScreen', { building});
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>That's why you're single.</Text>
+      <Text style={styles.buildingName}>{building.name}</Text>
+
+      <FlatList
+        data={building.photos}
+        horizontal
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <Image source={{ uri: item.url }} style={styles.buildingImage} />
+        )}
+      />
+
+      <Text style={styles.buildingDescription}>{building.description}</Text>
+
+      <Button
+        title="Generate Prompt"
+        onPress={handleGeneratePrompt} 
+      />
     </View>
   );
 };
@@ -12,13 +36,24 @@ const BuildingScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    padding: 20,
   },
-  text: {
+  buildingName: {
     fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  buildingImage: {
+    width: 200,
+    height: 200,
+    margin: 5,
+    borderRadius: 5,
+  },
+  buildingDescription: {
+    fontSize: 16,
+    marginBottom: 10,
   },
 });
 
 export default BuildingScreen;
+
