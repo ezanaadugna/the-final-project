@@ -1,5 +1,6 @@
 const axios = require("axios");
 const { Configuration, OpenAIApi } = require("openai");
+const PromptBuilder = require('../models/promptbuilder');
 
 const ChatController = {
   generateChat: async (req, res) => {
@@ -19,10 +20,15 @@ const ChatController = {
 
     try {
       const openai = new OpenAIApi(configuration);
+    
+      const promptBuilder = new PromptBuilder();
+      const { name, description } = req.body;
+      
+      let messages = promptBuilder.constructPrompt(name, description)
 
       const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: "Hello chatgpt, Can you give me an example of a pick up line based on the eiffel tower"}]
+        messages, 
         })
 
       console.log(completion.data.choices[0].message.content);
