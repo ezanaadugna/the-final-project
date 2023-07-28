@@ -7,6 +7,7 @@ import MapScreen from './screens/MapScreen';
 // import NoScreen from './screens/NoScreen';
 // import YesScreen from './screens/YesScreen';
 
+
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
           <Stack.Screen name="Map" component={MapScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-      
+ 
       {/* <NavigationContainer>
         <Stack.Navigator>
             <Stack.Screen name="ArchitectureQuestion" component={ArchitectureQuestionScreen} />
