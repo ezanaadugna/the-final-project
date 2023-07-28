@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-const ArchitectureQuestionScreen = ({ navigation }) => {
+const PromptScreen = ({ navigation }) => {
   const handleYes = () => {
     navigation.navigate('YesScreen');
   };
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ArchitectureQuestionScreen;
+export default PromptScreen;
