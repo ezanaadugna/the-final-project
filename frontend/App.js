@@ -11,10 +11,10 @@ import MapScreen from './screens/MapScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
-  useEffect(() => {
-    // Hide the splash screen once the app component mounts
-    SplashScreen.hide();
-  }, []);
+  // useEffect(() => {
+  //   // Hide the splash screen once the app component mounts
+  //   SplashScreen.hide();
+  // }, []);
   return (
     <View style={styles.container}>
       <NavigationContainer>
