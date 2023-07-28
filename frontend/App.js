@@ -6,7 +6,11 @@ import SplashScreen from 'react-native-splash-screen';
 import SplashScreenComponent from './screens/SplashScreen';
 // import YesScreen from './screens/YesScreen';
 import MapScreen from './screens/MapScreen';
-// import * as SplashScreen from 'expo-splash-screen';
+
+// import PromptScreen from './screens/PromptScreen';
+// import ScrollScreen from './screens/ScrollScreen';
+// import BuildingScreen from './screens/BuildingScreen';
+
 
 const Stack = createStackNavigator();
 
@@ -21,8 +25,17 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Splash" component={SplashScreenComponent} options={{ headerShown: false }} />
           <Stack.Screen name="MapScreen" component={MapScreen} />
+          <Stack.Screen name="Map" component={MapScreen} />
         </Stack.Navigator>
       </NavigationContainer>
+
+      {/* <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="PromptScreen" component={PromptScreenScreen} />
+            <Stack.Screen name="BuildingScreen" component={BuildingScreen} />
+            <Stack.Screen name="ScrollScreen" component={ScrollScreen} />
+        </Stack.Navigator>
+      </NavigationContainer> */}
     </View>
   );
 };

@@ -10,6 +10,46 @@ const MapScreen = () => {
         headerShown: false,
       })
     })
+  useEffect(() => {
+    // Request location permission if not granted
+    const requestLocationPermission = async () => {
+      try {
+        const { status } = await requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          console.log('Permission to access location was denied.');
+          return;
+        }
+
+        // Get the current location
+        const location = await getCurrentPositionAsync({});
+        setCurrentLocation(location.coords);
+      } catch (err) {
+        console.warn('Error requesting location permission:', err);
+      }
+    };
+
+    requestLocationPermission();
+  }, []);
+
+  useEffect(() => {
+    // Function to fetch nearby buildings
+    const fetchNearbyBuildings = async (latitude, longitude) => {
+      try {
+        // console.log(longitude);
+        // console.log(latitude);
+        const response = await axios.get(`http://192.168.0.14:3000/buildings?latitude=${latitude}&longitude=${longitude}`);
+        setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
+        
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
+
+    // Fetch nearby buildings when currentLocation is set
+    if (currentLocation) {
+      fetchNearbyBuildings(currentLocation.latitude, currentLocation.longitude);
+    }
+  }, [currentLocation]);
 
   return (
     <SafeAreaView>
