@@ -37,21 +37,25 @@ const MapScreen = () => {
     // Function to fetch nearby buildings
     const fetchNearbyBuildings = async (latitude, longitude) => {
       try {
-        // console.log(longitude);
+        console.log('Fetching nearby buildings...');
         // console.log(latitude);
-        const response = await axios.get(`http://192.168.0.14:3000/buildings?latitude=${latitude}&longitude=${longitude}`);
-        setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
-        
+        const response = await axios.get('http://192.168.0.31:3000/buildings?latitude=${latitude}&longitude=${longitude}');
+        console.log('Response from API:', response.data);
+
+        setNearbyBuildings(response.data);
       } catch (error) {
-        console.log(error.response);
       }
     };
-
     // Fetch nearby buildings when currentLocation is set
     if (currentLocation) {
+      console.log('Current Location:', currentLocation);
       fetchNearbyBuildings(currentLocation.latitude, currentLocation.longitude);
     }
   }, [currentLocation]);
+
+    const handleBuildingPress = (building) => {
+      navigation.navigate('BuildingScreen', { building });
+    };
 
   return (
     <View style={styles.container}>

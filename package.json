@@ -3,6 +3,7 @@
     "@react-native-community/geolocation": "^3.0.6",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
+    "cors": "^2.8.5",
     "react-native-gesture-handler": "^2.12.0",
     "react-native-reanimated": "^3.3.0",
     "react-native-screens": "^3.22.1"

@@ -16,7 +16,7 @@ const App = () => {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          {/*<Stack.Screen name="Map" component={MapScreen} /> */}
+          <Stack.Screen name="Map" component={MapScreen} /> 
           <Stack.Screen name="BuildingScreen" component={BuildingScreen} />
           {/*<Stack.Screen name="PromptScreen" component={PromptScreen} /> */}
         </Stack.Navigator>
