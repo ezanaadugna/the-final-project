@@ -1,5 +1,6 @@
 const axios = require("axios");
 const { Configuration, OpenAIApi } = require("openai");
+const PromptBuilder = require('../models/promptbuilder');
 
 const ChatController = {
   generateChat: async (req, res) => {
@@ -7,7 +8,6 @@ const ChatController = {
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
     });
-
 
     if (!configuration.apiKey) {
       res.status(500).json({
@@ -19,25 +19,21 @@ const ChatController = {
     }
 
     try {
-
-
       const openai = new OpenAIApi(configuration);
+    
+      const promptBuilder = new PromptBuilder();
+      const { name, description } = req.body;
+      
+      let messages = promptBuilder.constructPrompt(name, description)
 
-      const messages = [
-        {
-          role: "user",
-          content: "Can you give me an example of a pick up line based on the eiffel tower",
-        },
-      ];
+      const completion = await openai.createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages, 
+        })
 
-      const completion = await openai.createCompletion({
-        model: "text-davinci-003",
-        messages,
-      });
+      console.log(completion.data.choices[0].message.content);
 
-      console.log(completion.data);
-
-      const chatResponse = Completion.data.choices[0].message.content;
+      const chatResponse = completion.data.choices[0].message.content;
       return res.status(200).json({ pickupline: chatResponse });
     } catch (error) {
       console.log(error);
