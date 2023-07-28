@@ -2,19 +2,17 @@ import React, { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import SplashScreen from 'react-native-splash-screen';
+// import SplashScreen from 'react-native-splash-screen';
 import MapScreen from './screens/MapScreen';
-// import ArchitectureQuestionScreen from './screens/ArchitectureQuestionScreen';
-// import NoScreen from './screens/NoScreen';
-// import YesScreen from './screens/YesScreen';
+import * as SplashScreen from 'expo-splash-screen';
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  // useEffect(() => {
-  //   // Hide the splash screen once the app component mounts
-  //   SplashScreen.hide();
-  // }, []);
+  useEffect(() => {
+    // Hide the splash screen once the app component mounts
+    SplashScreen.hide();
+  }, []);
   return (
     <View style={styles.container}>
       <NavigationContainer>
@@ -22,14 +20,6 @@ const App = () => {
           <Stack.Screen name="Map" component={MapScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-{/*       
-      <NavigationContainer>
-        <Stack.Navigator>
-            <Stack.Screen name="ArchitectureQuestion" component={ArchitectureQuestionScreen} />
-            <Stack.Screen name="YesScreen" component={YesScreen} />
-            <Stack.Screen name="NoScreen" component={NoScreen} />
-        </Stack.Navigator>
-      </NavigationContainer> */}
     </View>
   );
 };
