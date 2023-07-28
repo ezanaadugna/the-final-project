@@ -35,10 +35,13 @@ const MapScreen = () => {
     // Function to fetch nearby buildings
     const fetchNearbyBuildings = async (latitude, longitude) => {
       try {
-        const response = await axios.get(`/buildings?latitude=${latitude}&longitude=${longitude}`);
+        // console.log(longitude);
+        // console.log(latitude);
+        const response = await axios.get(`http://192.168.1.241:3000/buildings?latitude=${latitude}&longitude=${longitude}`);
         setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
+        
       } catch (error) {
-        console.error('Error fetching nearby buildings:', error);
+        console.log(error.response);
       }
     };
 

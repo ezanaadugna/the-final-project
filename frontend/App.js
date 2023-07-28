@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import SplashScreen from 'react-native-splash-screen';
 import SplashScreenComponent from './screens/SplashScreen';
+// import FrontButton from './screens/previous-pages/NavigationPage';
 // import YesScreen from './screens/YesScreen';
 import MapScreen from './screens/MapScreen';
 
@@ -24,6 +24,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Splash" component={SplashScreenComponent} options={{ headerShown: false }} />
+          {/* <Stack.Screen name="Front" component={FrontButton} /> */}
           <Stack.Screen name="MapScreen" component={MapScreen} />
           <Stack.Screen name="Map" component={MapScreen} />
         </Stack.Navigator>
