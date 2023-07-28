@@ -3,9 +3,10 @@ import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MapScreen from './screens/MapScreen';
-// import ArchitectureQuestionScreen from './screens/ArchitectureQuestionScreen';
-// import NoScreen from './screens/NoScreen';
-// import YesScreen from './screens/YesScreen';
+
+// import PromptScreen from './screens/PromptScreen';
+// import ScrollScreen from './screens/ScrollScreen';
+// import BuildingScreen from './screens/BuildingScreen';
 
 
 const Stack = createStackNavigator();
@@ -18,12 +19,12 @@ const App = () => {
           <Stack.Screen name="Map" component={MapScreen} />
         </Stack.Navigator>
       </NavigationContainer>
- 
+
       {/* <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen name="ArchitectureQuestion" component={ArchitectureQuestionScreen} />
-            <Stack.Screen name="YesScreen" component={YesScreen} />
-            <Stack.Screen name="NoScreen" component={NoScreen} />
+            <Stack.Screen name="PromptScreen" component={PromptScreenScreen} />
+            <Stack.Screen name="BuildingScreen" component={BuildingScreen} />
+            <Stack.Screen name="ScrollScreen" component={ScrollScreen} />
         </Stack.Navigator>
       </NavigationContainer> */}
     </View>

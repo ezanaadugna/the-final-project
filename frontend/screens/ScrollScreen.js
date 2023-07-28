@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const YesScreen = () => {
+const ScrollScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Well done!</Text>
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default YesScreen;
+export default ScrollScreen;

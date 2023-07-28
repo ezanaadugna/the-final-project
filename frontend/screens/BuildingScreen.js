@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const NoScreen = () => {
+const BuildingScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>That's why you're single.</Text>
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NoScreen;
+export default BuildingScreen;
