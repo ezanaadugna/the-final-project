@@ -21,7 +21,7 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* Add your splash screen image here */}
-      <Image source={require('../assets/MC.jpeg')} style={styles.image} />
+      <Image source={require('../assets/MC.png')} style={styles.image} />
     </View>
   );
 };
@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#180101', // Replace with your desired background color
+    backgroundColor: '#000000', // Replace with your desired background color
   },
   image: {
-    width: '80%',
-    height: '80%',
+    width: '100%',
+    height: '100%',
     resizeMode: 'contain',
   },
 });

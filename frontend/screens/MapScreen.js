@@ -1,15 +1,15 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useLayoutEffect } from 'react';
-import { View, Text, SafeAreaView, Image } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
+import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
+import axios from 'axios';
+
+const logoImage = require('../assets/logo.png'); // Replace with the actual path to your logo image
 
 const MapScreen = () => {
-    const navigation = useNavigation();
+  const [currentLocation, setCurrentLocation] = useState(null);
+  const [nearbyBuildings, setNearbyBuildings] = useState([]);
 
-    useLayoutEffect(() => {
-      navigation.setOptions({
-        headerShown: false,
-      })
-    })
   useEffect(() => {
     // Request location permission if not granted
     const requestLocationPermission = async () => {
@@ -35,13 +35,10 @@ const MapScreen = () => {
     // Function to fetch nearby buildings
     const fetchNearbyBuildings = async (latitude, longitude) => {
       try {
-        // console.log(longitude);
-        // console.log(latitude);
-        const response = await axios.get(`http://192.168.0.14:3000/buildings?latitude=${latitude}&longitude=${longitude}`);
+        const response = await axios.get(`/buildings?latitude=${latitude}&longitude=${longitude}`);
         setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
-        
       } catch (error) {
-        console.log(error.response);
+        console.error('Error fetching nearby buildings:', error);
       }
     };
 
@@ -52,20 +49,108 @@ const MapScreen = () => {
   }, [currentLocation]);
 
   return (
-    <SafeAreaView>
-      <Text style={{ color: 'red' }}>
-        
-        {/* Header */}
-        <View>
-          <Text>Header</Text>
-          <Image 
-            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Dmap%2BMarker&psig=AOvVaw222lEC-uESSCgu07vMWOGy&ust=1690567164249000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPiNkcy7r4ADFQAAAAAdAAAAABAH"
-            className='h=87 w-7 bg-gray-300'
-          />
-        </View>
-      </Text>
-    </SafeAreaView>
-  )
-}
+    <View style={styles.container}>
+      {/* Header */}
+      <View style={styles.header}>
+        {/* Logo */}
+        <Image source={logoImage} style={styles.logo} />
+
+        {/* Welcome Text */}
+        <Text style={styles.headerText}>Welcome to MapChat!</Text>
+      </View>
+
+      {/* Map */}
+      <View style={styles.mapContainer}>
+        {currentLocation && (
+          <MapView
+            style={styles.map}
+            initialRegion={{
+              latitude: currentLocation.latitude,
+              longitude: currentLocation.longitude,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+          >
+            {/* Marker for the current location */}
+            <Marker coordinate={currentLocation} title="You are here" pinColor="blue" />
+
+            {/* Markers for nearby buildings */}
+            {nearbyBuildings.map((building, index) => (
+              <Marker
+                key={index}
+                coordinate={{
+                  latitude: building.location.coordinates[1],
+                  longitude: building.location.coordinates[0],
+                }}
+                title={building.name}
+              />
+            ))}
+          </MapView>
+        )}
+      </View>
+
+      {/* List of nearby buildings */}
+      <View style={styles.buildingListContainer}>
+        <Text style={styles.listHeader}>Nearby Buildings</Text>
+        <FlatList
+          data={nearbyBuildings}
+          keyExtractor={(item) => item.placeId}
+          renderItem={({ item }) => (
+            <View style={styles.buildingListItem}>
+              <Text style={styles.buildingName}>{item.name}</Text>
+              <Text style={styles.buildingDescription}>{item.description}</Text>
+            </View>
+          )}
+        />
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  logo: {
+    width: 50,
+    height: 50,
+    marginRight: 10,
+    // Add any other styling for the logo as needed
+  },
+  headerText: {
+    fontSize: 20,
+  },
+  mapContainer: {
+    flex: 1,
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
+  buildingListContainer: {
+    padding: 20,
+  },
+  listHeader: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  buildingListItem: {
+    marginBottom: 10,
+  },
+  buildingName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  buildingDescription: {
+    fontSize: 14,
+  },
+});
 
 export default MapScreen;
