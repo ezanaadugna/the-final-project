@@ -3,12 +3,14 @@ import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 
 const logoImage = require('../assets/logo.png'); // Replace with the actual path to your logo image
 
 const MapScreen = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [nearbyBuildings, setNearbyBuildings] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     // Request location permission if not granted

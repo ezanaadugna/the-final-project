@@ -3,10 +3,10 @@ import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MapScreen from './screens/MapScreen';
-
-// import PromptScreen from './screens/PromptScreen';
+import BuildingScreen from './screens/BuildingScreen';
+//import PromptScreen from './screens/PromptScreen';
 // import ScrollScreen from './screens/ScrollScreen';
-// import BuildingScreen from './screens/BuildingScreen';
+ 
 
 
 const Stack = createStackNavigator();
@@ -16,18 +16,12 @@ const App = () => {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Map" component={MapScreen} />
+          {/*<Stack.Screen name="Map" component={MapScreen} /> */}
+          <Stack.Screen name="BuildingScreen" component={BuildingScreen} />
+          {/*<Stack.Screen name="PromptScreen" component={PromptScreen} /> */}
         </Stack.Navigator>
       </NavigationContainer>
-
-      {/* <NavigationContainer>
-        <Stack.Navigator>
-            <Stack.Screen name="PromptScreen" component={PromptScreenScreen} />
-            <Stack.Screen name="BuildingScreen" component={BuildingScreen} />
-            <Stack.Screen name="ScrollScreen" component={ScrollScreen} />
-        </Stack.Navigator>
-      </NavigationContainer> */}
-    </View>
+      </View>
   );
 };
 
@@ -39,3 +33,8 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+//<Stack.Screen name="ScrollScreen" component={ScrollScreen} />
+    
+  
+
