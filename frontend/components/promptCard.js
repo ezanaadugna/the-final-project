@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import commonStyles from './theme';
+import commonStyles from './styles/theme';
+import PromptStyles from '../components/styles/promptStyles';
 
 const CardComponent = () => {
   return (
-    <View style={commonStyles.card}>
-      <Text style={commonStyles.cardTitle}>Title?</Text>
-      <Text style={commonStyles.cardContent}>The Generated Line</Text>
+    <View style={PromptStyles.promptCard}>
+      <Text style={PromptStyles.promptCardTitle}>Title?</Text>
+      <Text style={PromptStyles.promptCardContent}>The Generated Line</Text>
     </View>
   );
 };

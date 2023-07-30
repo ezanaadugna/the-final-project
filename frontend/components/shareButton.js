@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import commonStyles from './theme';
+import PromptStyles from './styles/promptStyles';
 
 const ShareButtonComponent = () => {
   return (
-    <View style={commonStyles.buttonShare}>
-      <Text style={commonStyles.buttonContent}>share</Text>
+    <View style={PromptStyles.buttonShare}>
+      <Text style={PromptStyles.buttonContent}>share</Text>
     </View>
   );
 };

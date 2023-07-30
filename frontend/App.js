@@ -2,17 +2,18 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-// import SplashScreenComponent from './screens/SplashScreen';
-// import FrontButton from './screens/previous-pages/NavigationPage';
-// import YesScreen from './screens/YesScreen';
-// import MapScreen from './screens/MapScreen';
-import { DummyPromptScreen } from './a-dummy-screen/dummyPromptScreen';
-import { DummyScrollScreen } from './a-dummy-screen/dummyScrollScreen';
+
+// import { DummyPromptScreen } from './a-dummy-screen/dummyPromptScreen';
+// import { DummyScrollScreen } from './a-dummy-screen/dummyScrollScreen';
+import { DummyBuildingScreen } from './a-dummy-screen/dummyScrollScreen';
 
 // import PromptScreen from './screens/PromptScreen';
 // import ScrollScreen from './screens/ScrollScreen';
 // import BuildingScreen from './screens/BuildingScreen';
-
+// import SplashScreenComponent from './screens/SplashScreen';
+// import FrontButton from './screens/previous-pages/NavigationPage';
+// import YesScreen from './screens/YesScreen';
+// import MapScreen from './screens/MapScreen';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +26,9 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="dummy page" component={DummyScrollScreen} options={{headerShown: false,}} />
+          <Stack.Screen name="dummy page" component={DummyBuildingScreen} options={{headerShown: false,}} />
+          {/* <Stack.Screen name="dummy page" component={DummyScrollScreen} options={{headerShown: false,}} /> */}
+          {/* <Stack.Screen name="dummy page" component={DummyPromptScreen} options={{headerShown: false,}} /> */}
         </Stack.Navigator>
       </NavigationContainer>
 

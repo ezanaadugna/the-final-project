@@ -1,8 +1,8 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import { View, Text } from 'react-native';
-import commonStyles from './theme';
+import ScrollStyles from '../components/styles/scrollStyles';
 
-const TypeComponent = ({ text }) => { // Accept the 'text' prop here
+const TypeBoxComponent = ({ text }) => { // Accept the 'text' prop here
   const [typeBoxWidth, setTypeBoxWidth] = useState({});
 
   const typeBoxRefs = useRef([]);
@@ -23,21 +23,21 @@ const TypeComponent = ({ text }) => { // Accept the 'text' prop here
       <View
         key={text}
         style={[
-          commonStyles.typeBox,
+          ScrollStyles.typeBox,
           { width: typeBoxWidth[text], height: 50, marginLeft: 10 },
         ]}
         ref={(ref) => (typeBoxRefs.current[text] = ref)}
       >
-        <Text style={commonStyles.typeBoxContent}>{text}</Text>
+        <Text style={ScrollStyles.typeBoxContent}>{text}</Text>
       </View>
     );
   };
 
   return (
-    <View style={commonStyles.typeContainer}>
+    <View style={ScrollStyles.typeContainer}>
       {renderTypeBox(text)} 
     </View>
   );
 };
 
-export default TypeComponent;
+export default TypeBoxComponent;

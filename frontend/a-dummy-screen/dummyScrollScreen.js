@@ -1,20 +1,21 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import commonStyles from '../components/theme';
+import commonStyles from '../components/styles/theme';
+import ScrollStyles from '../components/styles/scrollStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import TypeComponent from '../components/typeBox'; 
+import TypeBoxComponent from '../components/typeBox'; 
 import BuildingCardComponent from '../components/buildingCards'; 
 
 
 const DummyScrollScreen = () => {
   return (
-    <SafeAreaView style={commonStyles.container}>
-      <Text style={commonStyles.header}>Scroll Prompt Screen</Text>
-        <View style={commonStyles.typeContainer}>
-          <TypeComponent text="Tower" />
-          <TypeComponent text="Mansion" />
-          <TypeComponent text="Monument" />
-          <TypeComponent text="Gallery" />
+    <SafeAreaView style={ScrollStyles.container}>
+      <Text style={commonStyles.header}>Dummy Scroll Screen</Text>
+        <View style={ScrollStyles.typeContainer}>
+          <TypeBoxComponent text="Tower" />
+          <TypeBoxComponent text="Mansion" />
+          <TypeBoxComponent text="Monument" />
+          <TypeBoxComponent text="Gallery" />
         </View>
 
       <BuildingCardComponent />

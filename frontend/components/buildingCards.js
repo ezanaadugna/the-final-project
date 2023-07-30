@@ -1,41 +1,42 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import commonStyles from './theme';
+import commonStyles from './styles/theme';
+import ScrollStyles from '../components/styles/scrollStyles';
 
-const BuildingComponent = () => {
+const BuildingCardComponent = () => {
   return (
-    <View style={commonStyles.centeredContainer}>
-      <View style={commonStyles.buildingCard}>
+    <View style={ScrollStyles.centeredContainer}>
+      <View style={ScrollStyles.buildingCard}>
         <Image
           source={require('../assets/theShard.jpg')} // Inline require here
-          style={commonStyles.buildingCardContentImage}
+          style={ScrollStyles.buildingCardContentImage}
         />
-        <View style={commonStyles.buildingCardTitleContainer}>
-          <Text style={commonStyles.buildingCardTitle}>Building Title</Text>
+        <View style={ScrollStyles.buildingCardTitleContainer}>
+          <Text style={ScrollStyles.buildingCardTitle}>Building Title</Text>
         </View>
       </View>
 
-      <View style={commonStyles.buildingCard}>
+      <View style={ScrollStyles.buildingCard}>
         <Image
           source={require('../assets/theShard.jpg')} // Inline require here
-          style={commonStyles.buildingCardContentImage}
+          style={ScrollStyles.buildingCardContentImage}
         />
-        <View style={commonStyles.buildingCardTitleContainer}>
-          <Text style={commonStyles.buildingCardTitle}>Building Title</Text>
+        <View style={ScrollStyles.buildingCardTitleContainer}>
+          <Text style={ScrollStyles.buildingCardTitle}>Building Title</Text>
         </View>
       </View>
 
-      <View style={commonStyles.buildingCard}>
+      <View style={ScrollStyles.buildingCard}>
         <Image
           source={require('../assets/theShard.jpg')} // Inline require here
-          style={commonStyles.buildingCardContentImage}
+          style={ScrollStyles.buildingCardContentImage}
         />
-        <View style={commonStyles.buildingCardTitleContainer}>
-          <Text style={commonStyles.buildingCardTitle}>Building Title</Text>
+        <View style={ScrollStyles.buildingCardTitleContainer}>
+          <Text style={ScrollStyles.buildingCardTitle}>Building Title</Text>
         </View>
       </View>
     </View>
   );
 };
 
-export default BuildingComponent;
+export default BuildingCardComponent;
