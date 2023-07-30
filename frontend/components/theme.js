@@ -100,12 +100,38 @@ const commonStyles = StyleSheet.create({
   },
 
   buttonContainer: {
-    flexDirection: 'row', // This will make the children align horizontally
-    // justifyContent: 'space-evenly', // You can adjust the spacing as you like
-    // paddingHorizontal: 10, // Add padding for better spacing
-    marginBottom: 10, // Optional: Add some margin if needed
-    // Other styles...
+    flexDirection: 'row', 
+    marginBottom: 10,
   },
+
+  typeContainer: {
+    
+  },
+
+  typeBox: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 14,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 3,
+    width: 100,
+    height: 50,
+    alignItems: 'center',
+    marginTop: 40,
+  },
+
+  typeBoxContent: {
+    fontSize: 20,
+    color: '#555',
+    fontFamily: 'Courier New',
+  },
+
 
 });
 
