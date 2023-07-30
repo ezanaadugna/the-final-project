@@ -6,7 +6,7 @@ import CardComponent from './components/card-dummy';
 import CopyButtonComponent from './components/copyButton'; 
 import ShareButtonComponent from './components/shareButton'; 
 
-const DummyPage = () => {
+const PromptScreenPage = () => {
   return (
     <SafeAreaView style={commonStyles.container}>
       <Text style={commonStyles.header}>Dummy Page</Text>
@@ -14,10 +14,11 @@ const DummyPage = () => {
       <CardComponent />
       <View style={commonStyles.buttonContainer}>
         <CopyButtonComponent />
+        <Text>               </Text>
         <ShareButtonComponent />
       </View>
     </SafeAreaView>
   );
 };
 
-export { DummyPage }
+export { PromptScreenPage }

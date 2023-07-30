@@ -6,8 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // import FrontButton from './screens/previous-pages/NavigationPage';
 // import YesScreen from './screens/YesScreen';
 // import MapScreen from './screens/MapScreen';
-import { DummyPage} from './dummyPage';
-import CardComponent from './components/card-dummy';
+import { PromptScreenPage } from './dummyPromptPage';
 
 // import PromptScreen from './screens/PromptScreen';
 // import ScrollScreen from './screens/ScrollScreen';
@@ -25,8 +24,7 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="dummy page" component={DummyPage} options={{headerShown: false,}} />
-          <Stack.Screen name="Card" component={CardComponent} options={{headerShown: false,}} />
+          <Stack.Screen name="dummy page" component={PromptScreenPage} options={{headerShown: false,}} />
         </Stack.Navigator>
       </NavigationContainer>
 

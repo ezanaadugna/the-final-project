@@ -70,8 +70,8 @@ const commonStyles = StyleSheet.create({
     width: 100,
     height: 50,
     alignItems: 'center',
-    // marginTop: 40,
-    marginRight: 170,
+    marginTop: 40,
+    // marginRight: 170,
   },
 
   buttonShare: {
@@ -89,8 +89,8 @@ const commonStyles = StyleSheet.create({
     width: 100,
     height: 50,
     alignItems: 'center',
-    // marginTop: 40,
-    marginLeft: 170,
+    marginTop: 40,
+    // marginLeft: 170,
   },
 
   buttonContent: {
@@ -101,8 +101,8 @@ const commonStyles = StyleSheet.create({
 
   buttonContainer: {
     flexDirection: 'row', // This will make the children align horizontally
-    // justifyContent: 'center', // You can adjust the spacing as you like
-    paddingHorizontal: 0, // Add padding for better spacing
+    // justifyContent: 'space-evenly', // You can adjust the spacing as you like
+    // paddingHorizontal: 10, // Add padding for better spacing
     marginBottom: 10, // Optional: Add some margin if needed
     // Other styles...
   },
