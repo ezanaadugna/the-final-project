@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+// ctrl + f the style you wish to change, much faster that way
+
 const commonStyles = StyleSheet.create({
   header: {
     alignItems: 'flex-start',
@@ -7,10 +9,9 @@ const commonStyles = StyleSheet.create({
     paddingTop: 20,
     fontSize: 20,
     color: 'black',
-    marginTop: 10,
-    // Example for changing font family:
-    fontFamily: 'Arial', // Change this to your desired font family
-    fontWeight: 'bold', // Change this to adjust font weight
+    marginTop: 0,
+    fontFamily: 'Arial', 
+    fontWeight: 'bold', 
   },
   container: {
     flex: 1,
@@ -21,39 +22,91 @@ const commonStyles = StyleSheet.create({
   text: {
     fontSize: 20,
     color: 'black',
-    // Example for changing font family:
-    fontFamily: 'Helvetica', // Change this to your desired font family
-    // fontWeight: 'bold', // Uncomment and adjust this if needed
+    fontFamily: 'Helvetica',
+    // fontWeight: 'bold', 
   },
   card: {
     backgroundColor: '#fff',
-    borderRadius: 8,
+    borderRadius: 30,
     padding: 20,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 300,
-    height: 350,
+    width: 350,
+    height: 400,
     alignItems: 'center',
     marginTop: 60,
   },
   cardTitle: {
+    flex: 0.45,
     fontSize: 18,
-    fontFamily: 'Times New Roman', // Change this to your desired font family
-    fontWeight: 'bold', // Change this for the font weight
+    fontFamily: 'Times New Roman',
+    fontWeight: 'bold',
     marginBottom: 8,
   },
   cardContent: {
-    fontSize: 16,
+    fontSize: 25,
     color: '#555',
-    fontFamily: 'Courier New', // Change this to your desired font family
-    // fontWeight: 'bold', // Uncomment and adjust this if needed
+    fontFamily: 'Courier New',
+    display: 'flex', // Use flexbox for vertical centering
   },
+  buttonCopy: {
+    backgroundColor: '#fff',
+    borderRadius: 30,
+    padding: 14,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+    width: 100,
+    height: 50,
+    alignItems: 'center',
+    // marginTop: 40,
+    marginRight: 170,
+  },
+
+  buttonShare: {
+    backgroundColor: '#fff',
+    borderRadius: 30,
+    padding: 14,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+    width: 100,
+    height: 50,
+    alignItems: 'center',
+    // marginTop: 40,
+    marginLeft: 170,
+  },
+
+  buttonContent: {
+    fontSize: 20,
+    color: '#555',
+    fontFamily: 'Courier New',
+  },
+
+  buttonContainer: {
+    flexDirection: 'row', // This will make the children align horizontally
+    // justifyContent: 'center', // You can adjust the spacing as you like
+    paddingHorizontal: 0, // Add padding for better spacing
+    marginBottom: 10, // Optional: Add some margin if needed
+    // Other styles...
+  },
+
 });
 
 export default commonStyles;
