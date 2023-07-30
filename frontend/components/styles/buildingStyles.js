@@ -60,7 +60,15 @@ const BuildingStyles = StyleSheet.create({
     width: '100%',
     height: '100%',
     resizeMode: 'cover', // You can adjust the image's resizeMode as needed
-    borderRadius: 30
+    borderRadius: 30,
+    overflow: 'hidden',
+  },
+
+  imageWrapper: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 30,
+    overflow: 'hidden', // Clip the image inside the wrapper
   },
 
   descriptionContainer: {
@@ -91,8 +99,8 @@ const BuildingStyles = StyleSheet.create({
 
   buttonGenerate: {
     backgroundColor: '#fff',
-    borderRadius: 30,
-    padding: 14,
+    borderRadius: 10,
+    justifyContent: 'center',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -101,15 +109,15 @@ const BuildingStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 100,
-    height: 50,
+    width: 200,
+    height: 70,
     alignItems: 'center',
     marginTop: 40,
     // marginRight: 170,
   },
 
   buttonContent: {
-    fontSize: 13,
+    fontSize: 17,
     color: 'black',
     fontFamily: 'Helvetica',
     // fontWeight: 'bold', 

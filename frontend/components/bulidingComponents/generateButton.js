@@ -5,7 +5,7 @@ import BuildingStyles from '../styles/buildingStyles';
 const GenerateButtonComponent = () => {
   return (
     <View style={BuildingStyles.buttonGenerate}>
-      <Text style={BuildingStyles.buttonContent}>Generate</Text>
+      <Text style={BuildingStyles.buttonContent}>GENERATE LINES</Text>
     </View>
   );
 };
