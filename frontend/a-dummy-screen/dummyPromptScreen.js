@@ -22,4 +22,4 @@ const DummyPromptScreen = () => {
   );
 };
 
-export { DummyPromptScreen }
+export default DummyPromptScreen

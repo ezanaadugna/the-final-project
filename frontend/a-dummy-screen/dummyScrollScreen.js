@@ -25,4 +25,4 @@ const DummyScrollScreen = () => {
   );
 };
 
-export { DummyScrollScreen }
+export default DummyScrollScreen

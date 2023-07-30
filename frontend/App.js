@@ -3,9 +3,9 @@ import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-// import { DummyPromptScreen } from './a-dummy-screen/dummyPromptScreen';
-// import { DummyScrollScreen } from './a-dummy-screen/dummyScrollScreen';
-import { DummyBuildingScreen } from './a-dummy-screen/dummyScrollScreen';
+// import DummyPromptScreen from './a-dummy-screen/dummyPromptScreen';
+// import DummyScrollScreen from './a-dummy-screen/dummyScrollScreen';
+import DummyBuildingScreen from './a-dummy-screen/dummyBuildingScreen';
 
 // import PromptScreen from './screens/PromptScreen';
 // import ScrollScreen from './screens/ScrollScreen';

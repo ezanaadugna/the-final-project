@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import commonStyles from './styles/theme';
 import PromptStyles from '../components/styles/promptStyles';
 
 const CardComponent = () => {
