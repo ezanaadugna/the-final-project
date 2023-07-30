@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import commonStyles from './styles/theme';
-import ScrollStyles from '../components/styles/scrollStyles';
+import ScrollStyles from '../styles/scrollStyles';
 
 const BuildingCardComponent = () => {
   return (

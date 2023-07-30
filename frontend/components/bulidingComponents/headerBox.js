@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import BuildingStyles from '../components/styles/buildingStyles';
+import BuildingStyles from '../styles/buildingStyles';
 
 const HeaderBoxComponent = ({ text }) => {
   return (

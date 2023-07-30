@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import PromptStyles from '../components/styles/promptStyles';
+import PromptStyles from '../styles/promptStyles';
 
-const CardComponent = () => {
+const PromptCardComponent = () => {
   return (
     <View style={PromptStyles.promptCard}>
       <Text style={PromptStyles.promptCardTitle}>Title?</Text>
@@ -11,4 +11,4 @@ const CardComponent = () => {
   );
 };
 
-export default CardComponent;
+export default PromptCardComponent

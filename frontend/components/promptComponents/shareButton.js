@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import PromptStyles from './styles/promptStyles';
+import PromptStyles from '../styles/promptStyles';
 
 const ShareButtonComponent = () => {
   return (

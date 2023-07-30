@@ -1,6 +1,6 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import { View, Text } from 'react-native';
-import ScrollStyles from '../components/styles/scrollStyles';
+import ScrollStyles from '../styles/scrollStyles';
 
 const TypeBoxComponent = ({ text }) => { // Accept the 'text' prop here
   const [typeBoxWidth, setTypeBoxWidth] = useState({});

@@ -3,8 +3,8 @@ import { Text, View } from 'react-native';
 import commonStyles from '../components/styles/theme';
 import ScrollStyles from '../components/styles/scrollStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import TypeBoxComponent from '../components/typeBox'; 
-import BuildingCardComponent from '../components/buildingCards'; 
+import TypeBoxComponent from '../components/scrollComponents/typeBox'; 
+import BuildingCardComponent from '../components/scrollComponents/buildingCards'; 
 
 
 const DummyScrollScreen = () => {
