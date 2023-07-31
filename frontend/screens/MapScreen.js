@@ -39,7 +39,7 @@ const MapScreen = () => {
       try {
         console.log('Fetching nearby buildings...');
         // console.log(latitude);
-        const response = await axios.get('http://192.168.0.31:3000/buildings?latitude=${latitude}&longitude=${longitude}');
+        const response = await axios.get('http://192.168.0.124:3000/buildings?latitude=${latitude}&longitude=${longitude}');
         console.log('Response from API:', response.data);
 
         setNearbyBuildings(response.data);
