@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import commonStyles from '../components/styles/theme';
 import PromptStyles from '../components/styles/promptStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -21,10 +21,15 @@ const initialPrompts = [
   { id: 10, title: 'Title 10', generatedPrompt: 'This is the generated line 10' },
   // Add more prompts as needed
 ];
+const styles = StyleSheet.create({
+  text: {
+  },
+});
+
+const Custom = () => <Text style={styles.text}></Text>; // Custom "nope" component
 
 const DummyPromptScreen = () => {
   const [prompts, setPrompts] = useState(initialPrompts);
-  // const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
 
   const handleCardRemoved = () => {
     setPrompts((prevPrompts) => prevPrompts.slice(1));
@@ -32,7 +37,6 @@ const DummyPromptScreen = () => {
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
-      <Text style={commonStyles.header}>Dummy Prompt Screen</Text>
       <SwipeCards
         cards={prompts}
         loop={false}
@@ -47,6 +51,8 @@ const DummyPromptScreen = () => {
           <GenerateComponent text='Generate More Prompts' />
         )}
         cardRemoved={handleCardRemoved}
+        renderNope={() => <Custom />}
+        renderYup={() => <Custom />}
       />
       <View style={PromptStyles.buttonContainer}>
         <ButtonComponent text='copy' />

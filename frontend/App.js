@@ -6,7 +6,7 @@ import DummyPromptScreen from './a-dummy-screen/dummyPromptScreen';
 import DummyScrollScreen from './a-dummy-screen/dummyScrollScreen';
 import DummyBuildingScreen from './a-dummy-screen/dummyBuildingScreen';
 import DummyMapScreen from './a-dummy-screen/dummyMapScreen';
-import BottomNavBar from './a-dummy-screen/dummyNavBar';
+import dummyBottomNavBar from './a-dummy-screen/dummyNavBar';
 import PromptScreen from './screens/PromptScreen';
 import ScrollScreen from './screens/ScrollScreen';
 import BuildingScreen from './screens/BuildingScreen';
@@ -15,6 +15,9 @@ import FrontButton from './screens/previous-pages/NavigationPage';
 import YesScreen from './screens/YesScreen';
 import MapScreen from './screens/MapScreen';
 import TempNavScreen from './screens/TempNavScreen';
+import BottomNavBar from './BottomNavBar';
+
+
 const Stack = createStackNavigator();
 function App() {
   // useEffect(() => {
@@ -24,14 +27,15 @@ function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Temp Nav Screen">
-        <Stack.Screen name="Temp Nav Screen" component={TempNavScreen} options={{headerShown: false,}} />
-         <Stack.Screen name="dummy page building" component={DummyBuildingScreen} options={{headerShown: false,}} />
-         <Stack.Screen name="dummy page scroll" component={DummyScrollScreen} options={{headerShown: false,}} />
+          <Stack.Screen name="Temp Nav Screen" component={TempNavScreen} options={{headerShown: false,}} />
+          <Stack.Screen name="dummy page building" component={DummyBuildingScreen} options={{headerShown: false,}} />
+          <Stack.Screen name="dummy page scroll" component={DummyScrollScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page prompt" component={DummyPromptScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page map" component={DummyMapScreen} options={{headerShown: false,}} />
           <Stack.Screen name="MapScreen" component={MapScreen} />
           <Stack.Screen name="Prompt Screen" component={PromptScreen} />
         </Stack.Navigator>
+        <BottomNavBar navigation={Stack.navigation} />
       </NavigationContainer>
   );
 };

@@ -9,7 +9,6 @@ import BuildingCardComponent from '../components/scrollComponents/buildingCards'
 const DummyScrollScreen = () => {
   return (
     <SafeAreaView style={ScrollStyles.container}>
-      <Text style={commonStyles.header}>Dummy Scroll Screen</Text>
       <ScrollView horizontal contentContainerStyle={ScrollStyles.typeContainer}>
       <TypeBoxComponent text="Tower" />
         <TypeBoxComponent text="Museum" />
