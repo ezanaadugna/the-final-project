@@ -30,4 +30,8 @@ app.use('/buildings', buildingRoutes);
 app.use("/chat", chatRouter);
 //app.get('/buildings/:id', BuildingController.getBuildingDetails);
 
+app.get('/', (req, res) => {
+  res.sendStatus(200); // Send a "200 OK" response without any content
+});
+
 module.exports = app;
