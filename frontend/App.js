@@ -30,8 +30,8 @@ export default function App() {
         <Stack.Navigator>
           {/* <Stack.Screen name="dummy page" component={DummyBuildingScreen} options={{headerShown: false,}} /> */}
           {/* <Stack.Screen name="dummy page" component={DummyScrollScreen} options={{headerShown: false,}} /> */}
-          <Stack.Screen name="dummy page" component={DummyPromptScreen} options={{headerShown: false,}} />
-          {/* <Stack.Screen name="dummy page" component={DummyMapScreen} options={{headerShown: false,}} /> */}
+          {/* <Stack.Screen name="dummy page" component={DummyPromptScreen} options={{headerShown: false,}} /> */}
+          <Stack.Screen name="dummy page" component={DummyMapScreen} options={{headerShown: false,}} />
         </Stack.Navigator>
         {/* <BottomNavBar /> */}
       </NavigationContainer>
