@@ -1,40 +1,20 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import ScrollStyles from '../styles/scrollStyles';
 
-const BuildingCardComponent = () => {
+const BuildingCardComponent = ({ imageURL }) => {
   return (
-    <View style={ScrollStyles.centeredContainer}>
+    <TouchableOpacity style={ScrollStyles.centeredContainer}>
       <View style={ScrollStyles.buildingCard}>
         <Image
-          source={require('../assets/theShard.jpg')} // Inline require here
+          source={{ uri: imageURL }}
           style={ScrollStyles.buildingCardContentImage}
         />
         <View style={ScrollStyles.buildingCardTitleContainer}>
           <Text style={ScrollStyles.buildingCardTitle}>Building Title</Text>
         </View>
       </View>
-
-      <View style={ScrollStyles.buildingCard}>
-        <Image
-          source={require('../assets/theShard.jpg')} // Inline require here
-          style={ScrollStyles.buildingCardContentImage}
-        />
-        <View style={ScrollStyles.buildingCardTitleContainer}>
-          <Text style={ScrollStyles.buildingCardTitle}>Building Title</Text>
-        </View>
-      </View>
-
-      <View style={ScrollStyles.buildingCard}>
-        <Image
-          source={require('../assets/theShard.jpg')} // Inline require here
-          style={ScrollStyles.buildingCardContentImage}
-        />
-        <View style={ScrollStyles.buildingCardTitleContainer}>
-          <Text style={ScrollStyles.buildingCardTitle}>Building Title</Text>
-        </View>
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

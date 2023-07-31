@@ -1,5 +1,5 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import ScrollStyles from '../styles/scrollStyles';
 
 const TypeBoxComponent = ({ text }) => { // Accept the 'text' prop here
@@ -34,9 +34,9 @@ const TypeBoxComponent = ({ text }) => { // Accept the 'text' prop here
   };
 
   return (
-    <View style={ScrollStyles.typeContainer}>
+    <TouchableOpacity style={ScrollStyles.typeContainer}>
       {renderTypeBox(text)} 
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -14,7 +14,7 @@ const ScrollStyles = StyleSheet.create({
   typeContainer: {
     flexDirection: 'row', 
     marginBottom: 10,
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
 
   typeBox: {
@@ -40,7 +40,7 @@ const ScrollStyles = StyleSheet.create({
   },
 
   centeredContainer: {
-    flex: 1,
+    // flex: 0,
     // justifyContent: 'center', // Center vertically
     alignItems: 'center', // Center horizontally
   },
@@ -49,7 +49,6 @@ const ScrollStyles = StyleSheet.create({
     backgroundColor: 'transparent',
     backgroundColor: '#fff',
     borderRadius: 30,
-    padding: 0,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -58,11 +57,11 @@ const ScrollStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 350,
-    height: 170,
+    width: '95%',
+    height: 150,
     alignItems: 'center',
-    marginTop: 10,
-    overflow: 'hidden', 
+    marginTop: 20,
+    // overflow: 'hidden', 
   },
 
   buildingCardContentImage: {

@@ -14,10 +14,8 @@ const DummyBuildingScreen = () => {
     <SafeAreaView style={BuildingStyles.buildingContainer}>
       <HeaderBoxComponent text="Building Name" />
       <ImageComponent imageSource={theShardImage}/>
-
       <DecriptionComponent decriptionText="this is the decription"/>
       <GenerateButtonComponent />
-
     </SafeAreaView>
   );
 };

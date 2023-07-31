@@ -3,9 +3,11 @@ import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-// import DummyPromptScreen from './a-dummy-screen/dummyPromptScreen';
-// import DummyScrollScreen from './a-dummy-screen/dummyScrollScreen';
+import DummyPromptScreen from './a-dummy-screen/dummyPromptScreen';
+import DummyScrollScreen from './a-dummy-screen/dummyScrollScreen';
 import DummyBuildingScreen from './a-dummy-screen/dummyBuildingScreen';
+import DummyMapScreen from './a-dummy-screen/dummyMapScreen';
+import BottomNavBar from './a-dummy-screen/dummyNavBar';
 
 // import PromptScreen from './screens/PromptScreen';
 // import ScrollScreen from './screens/ScrollScreen';
@@ -13,7 +15,7 @@ import DummyBuildingScreen from './a-dummy-screen/dummyBuildingScreen';
 // import SplashScreenComponent from './screens/SplashScreen';
 // import FrontButton from './screens/previous-pages/NavigationPage';
 // import YesScreen from './screens/YesScreen';
-// import MapScreen from './screens/MapScreen';
+import MapScreen from './screens/MapScreen';
 
 const Stack = createStackNavigator();
 
@@ -26,10 +28,12 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="dummy page" component={DummyBuildingScreen} options={{headerShown: false,}} />
+          {/* <Stack.Screen name="dummy page" component={DummyBuildingScreen} options={{headerShown: false,}} /> */}
           {/* <Stack.Screen name="dummy page" component={DummyScrollScreen} options={{headerShown: false,}} /> */}
-          {/* <Stack.Screen name="dummy page" component={DummyPromptScreen} options={{headerShown: false,}} /> */}
+          <Stack.Screen name="dummy page" component={DummyPromptScreen} options={{headerShown: false,}} />
+          {/* <Stack.Screen name="dummy page" component={DummyMapScreen} options={{headerShown: false,}} /> */}
         </Stack.Navigator>
+        {/* <BottomNavBar /> */}
       </NavigationContainer>
 
 

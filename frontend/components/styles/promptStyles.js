@@ -13,7 +13,7 @@ const PromptStyles = StyleSheet.create({
 
   buttonCopy: {
     backgroundColor: '#fff',
-    borderRadius: 30,
+    borderRadius: 20,
     padding: 14,
     shadowColor: '#000',
     shadowOffset: {
@@ -32,7 +32,7 @@ const PromptStyles = StyleSheet.create({
 
   buttonShare: {
     backgroundColor: '#fff',
-    borderRadius: 30,
+    borderRadius: 20,
     padding: 14,
     shadowColor: '#000',
     shadowOffset: {
@@ -72,8 +72,8 @@ const PromptStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 350,
-    height: 400,
+    width: '90%',
+    height: '67%',
     alignItems: 'center',
     marginTop: 60,
   },

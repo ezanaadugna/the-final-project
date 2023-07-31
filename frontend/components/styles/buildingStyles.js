@@ -23,8 +23,8 @@ const BuildingStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 300,
-    height: 50,
+    width: '90%',
+    height: '7%',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 40,
@@ -48,8 +48,8 @@ const BuildingStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 300,
-    height: 250,
+    width: '90%',
+    height: '40%',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 10,
@@ -83,8 +83,8 @@ const BuildingStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 300,
-    height: 100,
+    width: '90%',
+    height: '15%',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 10,
@@ -109,8 +109,8 @@ const BuildingStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 200,
-    height: 70,
+    width: '50%',
+    height: '10%',
     alignItems: 'center',
     marginTop: 40,
     // marginRight: 170,
@@ -122,9 +122,6 @@ const BuildingStyles = StyleSheet.create({
     fontFamily: 'Helvetica',
     // fontWeight: 'bold', 
   }
-
-
-
 })
 
 export default BuildingStyles
