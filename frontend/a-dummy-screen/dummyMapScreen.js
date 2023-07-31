@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import commonStyles from '../components/styles/theme';
+import { Text } from 'react-native';
 import MapStyles from '../components/styles/mapStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SearchComponent from '../components/mapComponents/searchBar'; 
@@ -12,7 +11,6 @@ const DummyMapScreen = () => {
     <SafeAreaView style={MapStyles.safeViewContainer}>
       <Text>Dummy Map Screen</Text>
       <SearchComponent />
-      <Text>give this space</Text>
       <MapComponent />
     </SafeAreaView>
   );

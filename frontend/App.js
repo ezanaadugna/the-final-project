@@ -15,7 +15,7 @@ import BottomNavBar from './a-dummy-screen/dummyNavBar';
 // import SplashScreenComponent from './screens/SplashScreen';
 // import FrontButton from './screens/previous-pages/NavigationPage';
 // import YesScreen from './screens/YesScreen';
-// import MapScreen from './screens/MapScreen';
+import MapScreen from './screens/MapScreen';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +32,7 @@ export default function App() {
           {/* <Stack.Screen name="dummy page" component={DummyScrollScreen} options={{headerShown: false,}} /> */}
           {/* <Stack.Screen name="dummy page" component={DummyPromptScreen} options={{headerShown: false,}} /> */}
           <Stack.Screen name="dummy page" component={DummyMapScreen} options={{headerShown: false,}} />
+          {/* <Stack.Screen name="MapScreen" component={MapScreen} /> */}
         </Stack.Navigator>
         {/* <BottomNavBar /> */}
       </NavigationContainer>
