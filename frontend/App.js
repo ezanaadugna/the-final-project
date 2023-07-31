@@ -15,7 +15,7 @@ import BottomNavBar from './a-dummy-screen/dummyNavBar';
 // import SplashScreenComponent from './screens/SplashScreen';
 // import FrontButton from './screens/previous-pages/NavigationPage';
 // import YesScreen from './screens/YesScreen';
-import MapScreen from './screens/MapScreen';
+// import MapScreen from './screens/MapScreen';
 
 const Stack = createStackNavigator();
 
