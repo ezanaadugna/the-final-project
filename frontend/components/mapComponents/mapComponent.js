@@ -1,4 +1,4 @@
-import { LOCAL_IP} from "@env"
+
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
@@ -37,8 +37,7 @@ const MapComponent = () => {
       try {
         // console.log(longitude);
         // console.log(latitude);
-        console.log(LOCAL_IP)
-        const response = await axios.get(`http://${LOCAL_IP}:3000/buildings?latitude=${latitude}&longitude=${longitude}`);
+        const response = await axios.get(`https://mapchat-krmk.onrender.com/buildings?latitude=${latitude}&longitude=${longitude}`);
         setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
         
       } catch (error) {
