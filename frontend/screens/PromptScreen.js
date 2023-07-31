@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import ChatInput from '../components/chatinput';
 
 const PromptScreen = ({ navigation }) => {
   const handleYes = () => {
@@ -12,12 +13,8 @@ const PromptScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.question}>Do you like Fine Architecture?</Text>
-      <View style={styles.buttonContainer}>
-        <Button title="Yes" onPress={handleYes} />
-        <Button title="No" onPress={handleNo} />
+      <ChatInput></ChatInput>
       </View>
-    </View>
   );
 };
 

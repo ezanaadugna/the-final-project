@@ -30,6 +30,7 @@ function App() {
           <Stack.Screen name="dummy page prompt" component={DummyPromptScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page map" component={DummyMapScreen} options={{headerShown: false,}} />
           <Stack.Screen name="MapScreen" component={MapScreen} />
+          <Stack.Screen name="Prompt Screen" component={PromptScreen} />
         </Stack.Navigator>
       </NavigationContainer>
   );
