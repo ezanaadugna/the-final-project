@@ -63,3 +63,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+
+
+//<Stack.Screen name="ScrollScreen" component={ScrollScreen} />
+    
+  
+
