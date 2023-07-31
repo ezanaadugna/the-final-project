@@ -15,6 +15,7 @@ import FrontButton from './screens/previous-pages/NavigationPage';
 import YesScreen from './screens/YesScreen';
 import MapScreen from './screens/MapScreen';
 import TempNavScreen from './screens/TempNavScreen';
+
 const Stack = createStackNavigator();
 function App() {
   // useEffect(() => {
