@@ -57,7 +57,7 @@ const PromptStyles = StyleSheet.create({
 
   buttonContainer: {
     flexDirection: 'row', 
-    marginBottom: 10,
+    marginBottom: 60,
   },
 
   promptCard: {
@@ -73,7 +73,7 @@ const PromptStyles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
     width: '90%',
-    height: '67%',
+    height: '85%',
     alignItems: 'center',
     marginTop: 60,
   },
@@ -92,6 +92,23 @@ const PromptStyles = StyleSheet.create({
     fontFamily: 'Courier New',
     display: 'flex', // Use flexbox for vertical centering
   },
+
+  generateButton: {
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 14,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+    width: 250,
+    height: 50,
+    alignItems: 'center',
+  }
 
 })
 
