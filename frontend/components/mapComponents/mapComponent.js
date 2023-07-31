@@ -5,10 +5,12 @@ import MapView, { Marker } from 'react-native-maps';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import axios from 'axios';
 import MapStyles from '../styles/mapStyles';
+import { useNavigation } from '@react-navigation/native';
 
 const MapComponent = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [nearbyBuildings, setNearbyBuildings] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     // Request location permission if not granted
@@ -39,7 +41,8 @@ const MapComponent = () => {
         // console.log(latitude);
         const response = await axios.get(`https://mapchat-krmk.onrender.com/buildings?latitude=${latitude}&longitude=${longitude}`);
         setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
-        
+        console.log('Response from API:', response.data);
+
       } catch (error) {
         console.log(error.response);
       }
@@ -47,10 +50,13 @@ const MapComponent = () => {
 
     // Fetch nearby buildings when currentLocation is set
     if (currentLocation) {
+      console.log('Current Location:', currentLocation);
       fetchNearbyBuildings(currentLocation.latitude, currentLocation.longitude);
     }
   }, [currentLocation]);
 
+
+  
   return (
     <View style={MapStyles.container}>
       {/* Map */}
