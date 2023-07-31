@@ -52,7 +52,7 @@ const DummyMapScreen = () => {
   }, [currentLocation]);
 
   const handleSeeMore = () => {
-    navigation.navigate('DummyScrollScreen', { nearbyBuildings });
+    navigation.navigate('dummy page scroll', { nearbyBuildings: nearbyBuildings });
   };
   return (
     <SafeAreaView style={MapStyles.safeViewContainer}>
