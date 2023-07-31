@@ -5,7 +5,7 @@ function TempNavScreen({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Here is your home screen</Text>
       <Button
-        title="Builing Scroll"
+        title="dummy page building"
         onPress={() => navigation.navigate("dummy page building")}
       />
         <Button
@@ -20,10 +20,10 @@ function TempNavScreen({ navigation }) {
         title="dummy page map"
         onPress={() => navigation.navigate("dummy page map")}
       />
-        <Button
+        {/* <Button
         title="MapScreen"
         onPress={() => navigation.navigate("MapScreen")}
-      />
+      /> */}
     </View>
   );
 }
