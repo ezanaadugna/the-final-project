@@ -51,12 +51,12 @@ const MapStyles = StyleSheet.create({
   },
 
   buildBox: {
-    height: '90%',
+    height: '85%',
     width: '100%',
     backgroundColor: '#6d36c7',
     borderRadius: 10,
     overflow: 'hidden',
-    padding: 10,
+    padding: 5,
     alignContent: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
