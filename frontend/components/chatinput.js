@@ -8,22 +8,17 @@ import PromptCardComponent from '../components/promptComponents/promptCard';
 import ButtonComponent from '../components/promptComponents/button'; 
 
 const ChatInput = () => {
-  const [buildingName, setBuildingName] = useState('');
-  const [buildingDescription, setBuildingDescription] = useState('');
+  const [userinput, setuserinput] = useState('');
   const [responseText, setResponseText] = useState('');
 
 
   const handleSubmit = () => {
-    const params2 = {
-      name: buildingName,
-      description: buildingDescription
+    // Prepare the data to be sent to the server
+    const data = {
+      userinput: userinput, // Pass the userinput from the state
     };
 
-
-    const buildingname= 'Guggenheim'
-    const description= 'NewYork'
-
-    axios.get('https://mapchat-55tf.onrender.com/chat', { buildingname, description })
+    axios.get('https://mapchat-55tf.onrender.com/chat', { params: data })
       .then(response => {
         console.log('Response from server:', response.data);
         setResponseText(JSON.stringify(response.data, null));
@@ -39,16 +34,9 @@ const ChatInput = () => {
       <View style={styles.container}>
         <TextInput
           style={styles.input}
-          placeholder="Building Name"
-          value={buildingName}
-          onChangeText={text => setBuildingName(text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Building Description"
-          value={buildingDescription}
-          onChangeText={text => setBuildingDescription(text)}
-          multiline
+          placeholder="User Input"
+          value={userinput}
+          onChangeText={text => setuserinput(text)}
         />
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
