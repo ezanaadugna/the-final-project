@@ -39,6 +39,12 @@ const DummyMapScreen = () => {
         const response = await axios.get(
           `https://mapchat-55tf.onrender.com/buildings?latitude=${latitude}&longitude=${longitude}`
         );
+        const nearbyBuildingsWithDetails = response.data.map((building) => ({
+          ...building,
+          name: building.name, // Replace 'name' with the actual name property from the API response
+          location: building.location, // Replace 'location' with the actual location property from the API response
+        }));
+        
         setNearbyBuildings(response.data);
         console.log('Response from API:', response.data);
       } catch (error) {
