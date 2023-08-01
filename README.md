@@ -1,7 +1,3 @@
-yellow-gold: ffd100
-grey-background: 373737
-purple: 6d36c7
-
 # MapChat<br>
 
 MapChat is a React Native app built with Expo that allows architecture enthusiasts to explore buildings around them and generate pick up lines based on those buildings.<br>
