@@ -22,9 +22,9 @@ const ChatController = {
       const openai = new OpenAIApi(configuration);
     
       const promptBuilder = new PromptBuilder();
-      const { name, description } = req.body;
+      const { buildingname, description } = req.body;
       
-      let messages = promptBuilder.constructPrompt(name, description)
+      let messages = promptBuilder.constructPrompt(buildingname, description)
 
       const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
