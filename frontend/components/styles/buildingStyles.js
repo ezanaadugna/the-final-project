@@ -24,7 +24,7 @@ const BuildingStyles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
     width: '90%',
-    height: '7%',
+    height: '10%',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 40,
@@ -54,21 +54,18 @@ const BuildingStyles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 10,
     resizeMode: 'cover',
+    overflow: 'hidden',
   },
 
   imageStyle: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover', // You can adjust the image's resizeMode as needed
-    borderRadius: 30,
-    overflow: 'hidden',
   },
 
   imageWrapper: {
     width: '100%',
-    height: '100%',
-    borderRadius: 30,
-    overflow: 'hidden', // Clip the image inside the wrapper
+    height: '100%', // Clip the image inside the wrapper
   },
 
   descriptionContainer: {
@@ -84,7 +81,7 @@ const BuildingStyles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
     width: '90%',
-    height: '15%',
+    height: '20%',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 10,
@@ -112,7 +109,7 @@ const BuildingStyles = StyleSheet.create({
     width: '50%',
     height: '10%',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 25,
     // marginRight: 170,
   },
 
