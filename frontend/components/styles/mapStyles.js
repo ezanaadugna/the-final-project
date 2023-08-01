@@ -23,7 +23,7 @@ const MapStyles = StyleSheet.create({
 // Map
 
   container: {
-    height: '75%',
+    height: '60%',
     width: '85%',
     backgroundColor: '#fff',
     borderRadius: 20,
@@ -66,6 +66,25 @@ const MapStyles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     fontFamily: 'Helvetica',
+  },
+
+  seeMoreButton: {
+      backgroundColor: '#fff',
+      borderRadius: 20,
+      padding: 14,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 3,
+      width: 100,
+      height: 50,
+      alignItems: 'center',
+      marginTop: 20,
+      // marginRight: 170,
   }
 })
 

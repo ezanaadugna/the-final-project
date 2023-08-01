@@ -14,7 +14,6 @@ const DummyScrollScreen = () => {
 
   return (
     <SafeAreaView style={ScrollStyles.container}>
-      <Text style={commonStyles.header}>Dummy Scroll Screen</Text>
         <View style={ScrollStyles.typeContainer}>
           <TypeBoxComponent text="Religious" />
           <TypeBoxComponent text="Museum" />
