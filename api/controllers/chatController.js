@@ -34,7 +34,7 @@ const ChatController = {
       console.log(completion.data.choices[0].message.content);
 
       const chatResponse = completion.data.choices[0].message.content;
-      return res.status(200).json({ pickupline: chatResponse });
+      return res.status(200).json({ chatResponse }); // changed to remove trailing word
     } catch (error) {
       console.log(error);
       return res.status(500).json({ error: "Failed to generate pick up line." });

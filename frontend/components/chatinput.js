@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
+import commonStyles from '../components/styles/theme';
+import PromptStyles from '../components/styles/promptStyles';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import PromptCardComponent from '../components/promptComponents/promptCard'; 
+import ButtonComponent from '../components/promptComponents/button'; 
 
 const ChatInput = () => {
   const [buildingName, setBuildingName] = useState('');
   const [buildingDescription, setBuildingDescription] = useState('');
+  const [responseText, setResponseText] = useState('');
+
 
   const handleSubmit = () => {
     const params = {
@@ -15,11 +22,14 @@ const ChatInput = () => {
     axios.get('https://mapchat-55tf.onrender.com/chat', { params })
       .then(response => {
         console.log('Response from server:', response.data);
+        setResponseText(JSON.stringify(response.data, null));
       })
       .catch(error => {
         console.error('Error:', error);
+        setResponseText('Error: ' + error.message);
       });
   };
+
 
   return (
       <View style={styles.container}>
@@ -38,8 +48,11 @@ const ChatInput = () => {
         />
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
-        </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
+      <Text style={styles.responseText}>
+        {responseText}
+      </Text>
+    </View>
     );
   };
 
@@ -65,6 +78,13 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
+  responseText: {
+    marginTop: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'green',
+  },
 });
 
 export default ChatInput;
+
