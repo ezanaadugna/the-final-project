@@ -14,23 +14,22 @@ const DummyScrollScreen = () => {
 
   return (
     <SafeAreaView style={ScrollStyles.container}>
-      <Text style={commonStyles.header}>Dummy Scroll Screen</Text>
-        <View style={ScrollStyles.typeContainer}>
-          <TypeBoxComponent text="Religious" />
-          <TypeBoxComponent text="Museum" />
-          <TypeBoxComponent text="Monument" />
-          <TypeBoxComponent text="Gallery" />
-        </View>
-        <FlatList
+      <ScrollView horizontal contentContainerStyle={ScrollStyles.typeContainer}>
+        <TypeBoxComponent text="Religious" />
+        <TypeBoxComponent text="Museum" />
+        <TypeBoxComponent text="Monument" />
+        <TypeBoxComponent text="Gallery" />
+      </ScrollView>
+      <FlatList
         data={nearbyBuildings}
         renderItem={({ item }) => (
           <BuildingCardComponent
-          imageURL={item.photos?.[0]?.url}
-          name={item.name}
+            imageURL={item.photos?.[0]?.url}
+            name={item.name}
           />
         )}
         keyExtractor={(item) => item.placeId}
-        />
+      />
     </SafeAreaView>
  
   );
