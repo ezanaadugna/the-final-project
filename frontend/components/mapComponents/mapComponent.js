@@ -8,10 +8,9 @@ import MapStyles from '../styles/mapStyles';
 
 const MapComponent = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
-  const [nearbyBuildings, setNearbyBuildings] = useState([]);
+  const [nearbyBuildings, setNearbyBuildings] = useState([]); 
 
   useEffect(() => {
-    // Request location permission if not granted
     const requestLocationPermission = async () => {
       try {
         const { status } = await requestForegroundPermissionsAsync();
@@ -20,7 +19,6 @@ const MapComponent = () => {
           return;
         }
 
-        // Get the current location
         const location = await getCurrentPositionAsync({});
         setCurrentLocation(location.coords);
       } catch (err) {
@@ -32,14 +30,14 @@ const MapComponent = () => {
   }, []);
 
   useEffect(() => {
-    // Function to fetch nearby buildings
     const fetchNearbyBuildings = async (latitude, longitude) => {
       try {
         // console.log(longitude);
         // console.log(latitude);
-        const response = await axios.get(`https://mapchat-55tf.onrender.comode /buildings?latitude=${latitude}&longitude=${longitude}`);
+        const response = await axios.get(`https://mapchat-55tf.onrender.com/buildings?latitude=${latitude}&longitude=${longitude}`);
         setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
-        
+        console.log('Response from API:', response.data);
+
       } catch (error) {
         console.log(error.response);
       }
@@ -47,10 +45,13 @@ const MapComponent = () => {
 
     // Fetch nearby buildings when currentLocation is set
     if (currentLocation) {
+      console.log('Current Location:', currentLocation);
       fetchNearbyBuildings(currentLocation.latitude, currentLocation.longitude);
     }
   }, [currentLocation]);
 
+
+  
   return (
     <View style={MapStyles.container}>
       {/* Map */}
