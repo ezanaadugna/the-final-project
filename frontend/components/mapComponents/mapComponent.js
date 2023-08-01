@@ -37,7 +37,7 @@ const MapComponent = () => {
       try {
         // console.log(longitude);
         // console.log(latitude);
-        const response = await axios.get(`https://mapchat-krmk.onrender.com/buildings?latitude=${latitude}&longitude=${longitude}`);
+        const response = await axios.get(`https://mapchat-55tf.onrender.comode /buildings?latitude=${latitude}&longitude=${longitude}`);
         setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
         
       } catch (error) {
