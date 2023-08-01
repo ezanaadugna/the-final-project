@@ -29,7 +29,6 @@ const ChatInput = () => {
       });
   };
 
-
   return (
       <View style={styles.container}>
         <TextInput
