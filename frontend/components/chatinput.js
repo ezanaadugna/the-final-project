@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
+import commonStyles from '../components/styles/theme';
+import PromptStyles from '../components/styles/promptStyles';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import PromptCardComponent from '../components/promptComponents/promptCard'; 
+import ButtonComponent from '../components/promptComponents/button'; 
 
 const ChatInput = () => {
   const [buildingName, setBuildingName] = useState('');
@@ -82,3 +87,4 @@ const styles = StyleSheet.create({
 });
 
 export default ChatInput;
+
