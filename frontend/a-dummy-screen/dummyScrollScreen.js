@@ -32,10 +32,11 @@ const DummyScrollScreen = () => {
         keyExtractor={(item) => item.placeId}
         />
     </SafeAreaView>
-    // <ScrollView horizontal contentContainerStyle={ScrollStyles.typeContainer}></ScrollView>
+ 
   );
 };
 
 export default DummyScrollScreen
 
-
+   // <ScrollView horizontal contentContainerStyle={ScrollStyles.typeContainer}></ScrollView>
+//

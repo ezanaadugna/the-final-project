@@ -79,7 +79,7 @@ const ScrollStyles = StyleSheet.create({
     fontFamily: 'Times New Roman',
     fontWeight: 'bold',
     marginBottom: 0,
-    color: '#fff',
+    color: '#000',
   },
 
   buildingCardTitleContainer: {
