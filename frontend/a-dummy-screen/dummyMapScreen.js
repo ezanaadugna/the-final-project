@@ -64,14 +64,12 @@ const DummyMapScreen = () => {
   return (
     <SafeAreaView style={MapStyles.safeViewContainer}>
       <MapComponent />
-
       {/* <ScrollView style={MapStyles.buildView}>
         <BulidingComponent />
         <BulidingComponent />
         <BulidingComponent />
       </ScrollView> */}
       {/* <SearchComponent /> */}
-      <MapComponent  />
       <TouchableOpacity onPress={handleSeeMore}>
         <View style={MapStyles.seeMoreButton}>
           <Text style={MapStyles.seeMoreButtonText}>See More</Text>
