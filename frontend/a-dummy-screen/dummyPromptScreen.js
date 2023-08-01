@@ -55,6 +55,9 @@ const DummyPromptScreen = () => {
 
 
   const handleCardRemoved = () => {
+    if (prompts.length > 0) {
+      handleSubmit();
+    }
     setPrompts((prevPrompts) => prevPrompts.slice(1));
   };
 
@@ -74,7 +77,6 @@ const DummyPromptScreen = () => {
       <SwipeCards
         cards={prompts}
         loop={false}
-        onPress={handleSubmit}
         renderCard={(prompt) => (
           <PromptCardComponent
             key={prompt.id}
