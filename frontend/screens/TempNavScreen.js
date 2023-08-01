@@ -20,14 +20,10 @@ function TempNavScreen({ navigation }) {
         title="dummy page map"
         onPress={() => navigation.navigate("dummy page map")}
       />
-       {/* <Button
-        title="MapScreen"
-        onPress={() => navigation.navigate("MapScreen")}
-      />
         <Button
         title="Prompt"
         onPress={() => navigation.navigate("Prompt Screen")}
-      /> */}
+      />
     </View>
   );
 }
