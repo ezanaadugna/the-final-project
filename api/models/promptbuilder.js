@@ -2,14 +2,16 @@
 // then create the prompt, that gets sent to open ai. 
 // open ai fetch request, is in the building controller file. 
 
+//const userinput = "Guggenheim, New York"
 
 class PromptBuilder {
-  constructPrompt(name, description) {
+  constructPrompt(userinput) {
 
     const systemContent = [
+      {"role": "system", "content": "You are a helpful assistant."},
       {role: "user",
       content:`Your purpose is to be a pick-up line generator. You should suggest a romantic fact or facts that can be used by architecture lovers as a pick-up line, based on the building name provided. Please follow the following instructions: 
-    - Provide a romantic fact that can be used by architecture lovers as a pick-up line using the building name ${name} and the location ${description}. This should be up to 3 lines long. Don't put it in quotations.`}
+    - Provide a romantic fact that can be used by architecture lovers as a pick-up line using the building name ${userinput}. It should be romantic and witty. It should be around 2 lines long`}
     ];
 
 

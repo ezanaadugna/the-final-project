@@ -5,6 +5,10 @@ const PromptBuilder = require('../models/promptbuilder');
 const ChatController = {
   generateChat: async (req, res) => {
 
+    const userinput = req.query.userinput;
+
+    //const { buildingname, description } = req.query;
+
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
     });
@@ -19,18 +23,19 @@ const ChatController = {
     }
 
     try {
+
+      const promptBuilder = new PromptBuilder();
+
       const openai = new OpenAIApi(configuration);
     
-      const promptBuilder = new PromptBuilder();
-      const { name, description } = req.body;
       
-      let messages = promptBuilder.constructPrompt(name, description)
+      let messages = promptBuilder.constructPrompt(userinput)
 
       const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages, 
         })
-
+      console.log(completion.data.choices[0].message);
       console.log(completion.data.choices[0].message.content);
 
       const chatResponse = completion.data.choices[0].message.content;

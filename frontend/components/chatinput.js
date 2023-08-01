@@ -22,7 +22,7 @@ const ChatInput = () => {
     axios.get('https://mapchat-55tf.onrender.com/chat', { name, description })
       .then(response => {
         console.log('Response from server:', response.data);
-        setResponseText(JSON.stringify(response.data, null));
+        setResponseText((response.data, null));
       })
       .catch(error => {
         console.error('Error:', error);
