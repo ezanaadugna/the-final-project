@@ -22,9 +22,9 @@ const ChatController = {
       const openai = new OpenAIApi(configuration);
     
       const promptBuilder = new PromptBuilder();
-      const { buildingname, description } = req.body;
+      const { name, description } = req.body;
       
-      let messages = promptBuilder.constructPrompt(buildingname, description)
+      let messages = promptBuilder.constructPrompt(name, description)
 
       const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
@@ -34,7 +34,7 @@ const ChatController = {
       console.log(completion.data.choices[0].message.content);
 
       const chatResponse = completion.data.choices[0].message.content;
-      return res.status(200).json({ chatResponse }); // changed to remove trailing word
+      return res.status(200).json({ pickupline: chatResponse }); 
     } catch (error) {
       console.log(error);
       return res.status(500).json({ error: "Failed to generate pick up line." });
