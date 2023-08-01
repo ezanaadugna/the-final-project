@@ -7,6 +7,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import PromptCardComponent from '../components/promptComponents/promptCard'; 
 import ButtonComponent from '../components/promptComponents/button'; 
 
+/// NO LONGER NEED THIS PAGE 
+
 const ChatInput = () => {
   const [userinput, setuserinput] = useState('');
   const [responseText, setResponseText] = useState('');
@@ -28,7 +30,6 @@ const ChatInput = () => {
         setResponseText('Error: ' + error.message);
       });
   };
-
 
   return (
       <View style={styles.container}>

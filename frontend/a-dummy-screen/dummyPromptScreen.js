@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import commonStyles from '../components/styles/theme';
 import PromptStyles from '../components/styles/promptStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -7,6 +7,8 @@ import PromptCardComponent from '../components/promptComponents/promptCard';
 import ButtonComponent from '../components/promptComponents/button'; 
 import SwipeCards from 'react-native-swipe-cards';
 import GenerateComponent from '../components/promptComponents/generateButton';
+import axios from 'axios';
+// 
 
 const initialPrompts = [
   { id: 1, title: 'Title 1', generatedPrompt: 'This is the generated line 1' },
@@ -30,13 +32,48 @@ const Custom = () => <Text style={styles.text}></Text>; // Custom "nope" compone
 
 const DummyPromptScreen = () => {
   const [prompts, setPrompts] = useState(initialPrompts);
+  const [userinput, setuserinput] = useState('');
+  const [responseText, setResponseText] = useState('');
+
+
+  const handleSubmit = () => {
+    // Prepare the data to be sent to the server
+    const data = {
+      userinput: userinput, // Pass the userinput from the state
+    };
+
+    axios.get('https://mapchat-55tf.onrender.com/chat', { params: data })
+      .then(response => {
+        console.log('Response from server:', response.data);
+        setResponseText(JSON.stringify(response.data, null));
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        setResponseText('Error: ' + error.message);
+      });
+  };
+
 
   const handleCardRemoved = () => {
+    if (prompts.length > 0) {
+      handleSubmit();
+    }
     setPrompts((prevPrompts) => prevPrompts.slice(1));
   };
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="User Input"
+          value={userinput}
+          onChangeText={text => setuserinput(text)}
+        />
+        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+          <Text style={styles.buttonText}>Submit</Text>
+      </TouchableOpacity>
+      <Text style={styles.responseText}>
+      </Text>
       <SwipeCards
         cards={prompts}
         loop={false}
@@ -44,7 +81,7 @@ const DummyPromptScreen = () => {
           <PromptCardComponent
             key={prompt.id}
             title={prompt.title}
-            generatedPrompt={prompt.generatedPrompt}
+            generatedPrompt={responseText}
           />
         )}
         renderNoMoreCards={() => (
