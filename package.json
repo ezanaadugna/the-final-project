@@ -5,9 +5,11 @@
     "@react-navigation/stack": "^6.3.17",
     "cors": "^2.8.5",
     "axios": "^1.4.0",
-    "react-native-gesture-handler": "^2.12.0",
-    "react-native-reanimated": "^3.3.0",
-    "react-native-screens": "^3.22.1"
+    "react-native-gesture-handler": "~2.12.0",
+    "react-native-reanimated": "~3.3.0",
+    "react-native-screens": "~3.22.0",
+    "react-native": "0.72.3",
+    "react": "18.2.0"
   },
   "name": "the-final-project",
   "version": "1.0.0",
