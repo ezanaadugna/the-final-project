@@ -14,12 +14,16 @@ const ChatInput = () => {
 
 
   const handleSubmit = () => {
-    const params = {
+    const params2 = {
       name: buildingName,
       description: buildingDescription
     };
 
-    axios.get('https://mapchat-55tf.onrender.com/chat', { params })
+
+    const buildingname= 'Guggenheim'
+    const description= 'NewYork'
+
+    axios.get('https://mapchat-55tf.onrender.com/chat', { buildingname, description })
       .then(response => {
         console.log('Response from server:', response.data);
         setResponseText(JSON.stringify(response.data, null));
