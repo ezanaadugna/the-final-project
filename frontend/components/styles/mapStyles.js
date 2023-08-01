@@ -46,7 +46,7 @@ const MapStyles = StyleSheet.create({
     width: '85%',
     backgroundColor: '#fff',
     borderRadius: 20,
-    overflow: 'hidden',
+    // overflow: 'hidden',
     marginTop: 20,
   },
 
@@ -55,11 +55,10 @@ const MapStyles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#6d36c7',
     borderRadius: 10,
-    overflow: 'hidden',
     padding: 5,
     alignContent: 'center',
     justifyContent: 'center',
-    overflow: 'hidden',
+    // overflow: 'hidden',
   },
 
   boxText: {

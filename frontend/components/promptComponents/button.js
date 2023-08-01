@@ -11,3 +11,4 @@ const ButtonComponent = ({ text }) => {
 };
 
 export default ButtonComponent;
+

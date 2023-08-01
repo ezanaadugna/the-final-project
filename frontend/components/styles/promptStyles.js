@@ -27,26 +27,8 @@ const PromptStyles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     marginTop: 40,
-    // marginRight: 170,
-  },
-
-  buttonShare: {
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    padding: 14,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 3,
-    width: 100,
-    height: 50,
-    alignItems: 'center',
-    marginTop: 40,
-    // marginLeft: 170,
+    marginLeft: 40,
+    marginRight: 40,
   },
 
   buttonContent: {
@@ -56,7 +38,8 @@ const PromptStyles = StyleSheet.create({
   },
 
   buttonContainer: {
-    flexDirection: 'row', 
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     marginBottom: 60,
   },
 

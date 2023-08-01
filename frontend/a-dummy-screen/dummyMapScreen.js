@@ -75,7 +75,6 @@ const DummyMapScreen = () => {
       </TouchableOpacity>
     </SafeAreaView>
   );
-
 };
 
 export default DummyMapScreen;
