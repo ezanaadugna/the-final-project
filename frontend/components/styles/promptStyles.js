@@ -105,7 +105,7 @@ const PromptStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 250,
+    width: '95%',
     height: 50,
     alignItems: 'center',
   }

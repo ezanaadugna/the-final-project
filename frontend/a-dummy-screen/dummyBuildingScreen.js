@@ -7,6 +7,7 @@ import HeaderBoxComponent from '../components/bulidingComponents/headerBox';
 import ImageComponent from '../components/bulidingComponents/images'; 
 import GenerateButtonComponent from '../components/bulidingComponents/generateButton'; 
 import DecriptionComponent from '../components/bulidingComponents/description';
+
 const theShardImage = require('../assets/theShard.jpg');
 
 const DummyBuildingScreen = () => {

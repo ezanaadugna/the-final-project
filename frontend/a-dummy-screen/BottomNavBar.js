@@ -11,13 +11,13 @@ const BottomNavBar = () => {
         style={styles.button}
         onPress={() => navigation.navigate('dummy page map')}
       >
-        <Text style={styles.buttonText}>Dummy Map</Text>
+        <Text style={styles.buttonText}>Map</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('dummy page scroll')}
       >
-        <Text style={styles.buttonText}>Dummy Scroll</Text>
+        <Text style={styles.buttonText}>Scroll</Text>
       </TouchableOpacity>
     </View>
   );

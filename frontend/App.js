@@ -15,7 +15,7 @@ import FrontButton from './screens/previous-pages/NavigationPage';
 import YesScreen from './screens/YesScreen';
 import MapScreen from './screens/MapScreen';
 import TempNavScreen from './screens/TempNavScreen';
-import BottomNavBar from './BottomNavBar';
+import BottomNavBar from './a-dummy-screen/BottomNavBar';
 
 
 const Stack = createStackNavigator();
