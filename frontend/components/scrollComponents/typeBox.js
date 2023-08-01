@@ -2,7 +2,7 @@ import React, { useState, useRef, useLayoutEffect } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import ScrollStyles from '../styles/scrollStyles';
 
-const TypeBoxComponent = ({ text }) => { // Accept the 'text' prop here
+const TypeBoxComponent = ({ text }) => { 
   const [typeBoxWidth, setTypeBoxWidth] = useState({});
 
   const typeBoxRefs = useRef([]);
@@ -34,9 +34,9 @@ const TypeBoxComponent = ({ text }) => { // Accept the 'text' prop here
   };
 
   return (
-    <TouchableOpacity style={ScrollStyles.typeContainer}>
-      {renderTypeBox(text)} 
-    </TouchableOpacity>
+    <View style={ScrollStyles.typeContainer}>
+    {renderTypeBox(text)} 
+  </View>
   );
 };
 
