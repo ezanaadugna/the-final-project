@@ -34,7 +34,8 @@ const Custom = () => <Text style={styles.text}></Text>; // Custom "nope" compone
 
 const DummyPromptScreen = () => {
   const route = useRoute();
-  const { buildingData} = route.params;
+  const { name } = route.params;
+  console.log('name:', name);
 
   const [prompts, setPrompts] = useState(initialPrompts);
   const [userinput, setuserinput] = useState('');
@@ -86,7 +87,7 @@ const DummyPromptScreen = () => {
           <PromptCardComponent
             key={prompt.id}
             title={prompt.title}
-            generatedPrompt={responseText}
+            generatedPrompt={name}
           />
         )}
         renderNoMoreCards={() => (
@@ -96,17 +97,23 @@ const DummyPromptScreen = () => {
         renderNope={() => <Custom />}
         renderYup={() => <Custom />}
       />
-      <View style={PromptStyles.buttonContainer}>
-        <ButtonComponent text='copy' />
-        <Text>                        </Text>
-        <ButtonComponent text='share' />
-        <View>
-          <Text>Pickup Line for {buildingData.name}</Text>
-          <Text>{pickupLine}</Text>
-        </View>
-      </View>
+
     </SafeAreaView>
   );
 };
 
 export default DummyPromptScreen;
+
+/*
+
+      <View style={PromptStyles.buttonContainer}>
+        <ButtonComponent text='copy' />
+        <Text>                        </Text>
+        <ButtonComponent text='share' />
+      </View>
+
+<View>
+<Text>Pickup Line for {name}</Text>
+<Text>{pickupLine}</Text>
+</View>
+*/
