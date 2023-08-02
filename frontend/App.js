@@ -7,6 +7,7 @@ import DummyMapScreen from './a-dummy-screen/dummyMapScreen';
 import SplashScreenComponent from './screens/SplashScreen';
 import BottomNavBar from './a-dummy-screen/BottomNavBar';
 import SplashScreen from 'react-native-splash-screen';
+import PromptScreenManual from './a-dummy-screen/PromptScreenManual';
 
 const Stack = createStackNavigator();
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Stack.Screen name="dummy page map" component={DummyMapScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page scroll" component={DummyScrollScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page prompt" component={DummyPromptScreen} options={{headerShown: false,}} />
+          <Stack.Screen name="prompt screen manual" component={PromptScreenManual} options={{headerShown: false,}} />
         </Stack.Navigator>
       </NavigationContainer>
   );
