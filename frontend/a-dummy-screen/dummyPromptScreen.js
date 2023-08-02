@@ -128,17 +128,3 @@ const DummyPromptScreen = () => {
 };
 
 export default DummyPromptScreen;
-
-/*
-
-      <View style={PromptStyles.buttonContainer}>
-        <ButtonComponent text='copy' />
-       <Text>                        </Text> 
-        <ButtonComponent text='share' />
-      </View> 
-
-<View>
-<Text>Pickup Line for {name}</Text>
-<Text>{pickupLine}</Text>
-</View>
-*/

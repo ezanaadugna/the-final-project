@@ -35,7 +35,7 @@ const MapComponent = () => {
         // console.log(longitude);
         // console.log(latitude);
         const response = await axios.get(`https://mapchat-55tf.onrender.com/buildings?latitude=${latitude}&longitude=${longitude}`);
-        setNearbyBuildings(response.data.slice(0, 3)); // Show only the first 3 buildings
+        setNearbyBuildings(response.data.slice(0, 10)); // Show only the first 3 buildings
         console.log('Response from API:', response.data);
 
       } catch (error) {

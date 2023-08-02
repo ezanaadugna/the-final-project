@@ -14,12 +14,12 @@ const DummyScrollScreen = () => {
 
   return (
     <SafeAreaView style={ScrollStyles.container}>
-      <ScrollView horizontal contentContainerStyle={ScrollStyles.typeContainer}>
+      {/* <ScrollView horizontal contentContainerStyle={ScrollStyles.typeContainer}>
         <TypeBoxComponent text="Religious" />
         <TypeBoxComponent text="Museum" />
         <TypeBoxComponent text="Monument" />
         <TypeBoxComponent text="Gallery" />
-      </ScrollView>
+      </ScrollView> */}
       <FlatList
         data={nearbyBuildings}
         renderItem={({ item }) => (
