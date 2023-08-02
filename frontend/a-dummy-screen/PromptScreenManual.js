@@ -86,12 +86,14 @@ const PromptScreenManual = () => {
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
+         <View style={PromptStyles.inputBox}>
          <TextInput
-          placeholder="User Input"
+          placeholder="Add..."
           value={userinput}
           onChangeText={text => setuserinput(text)}
         />
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+        </View>
+        <TouchableOpacity style={PromptStyles.submitButton} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
       <Text style={styles.responseText}>

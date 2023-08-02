@@ -8,7 +8,7 @@ const PromptStyles = StyleSheet.create({
     flex: 1,
     // justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#f0f0f0'
   },
 
   buttonCopy: {
@@ -40,11 +40,15 @@ const PromptStyles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 60,
+    marginBottom: 50,
+    backgroundColor: 'black',
+    height: 60,
   },
 
   promptCard: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
+    borderWidth: 5,
+    borderColor: '#bbf9ff',
     borderRadius: 30,
     padding: 20,
     shadowColor: '#000',
@@ -55,10 +59,10 @@ const PromptStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: '100%',
-    height: '85%',
+    width: '80%',
+    height: '90%',
     alignItems: 'center',
-    marginTop: 60,
+    marginTop: 10,
   },
 
   promptCardTitle: {
@@ -70,8 +74,8 @@ const PromptStyles = StyleSheet.create({
   },
   
   promptCardContent: {
-    fontSize: 25,
-    color: '#555',
+    fontSize: 15,
+    color: 'black',
     fontFamily: 'Courier New',
     display: 'flex', // Use flexbox for vertical centering
   },
@@ -95,6 +99,33 @@ const PromptStyles = StyleSheet.create({
 
   swipeCard: {
     // width: '10%'
+  },
+
+  inputBox: {
+    padding: 10,
+    backgroundColor: '#fff',
+    width: '90%',
+    borderRadius: 20,
+    marginTop: 10,
+  },
+
+  submitButton: {
+    marginTop: 10,
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 2,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+    width: '25%',
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 
 })
