@@ -96,7 +96,7 @@ const DummyPromptScreen = () => {
         />
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
       <Text style={styles.responseText}>
       </Text> */}
       <SwipeCards
