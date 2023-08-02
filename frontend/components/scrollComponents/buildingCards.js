@@ -1,16 +1,21 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import ScrollStyles from '../styles/scrollStyles';
-
+import { useNavigation } from '@react-navigation/native';
 
 const BuildingCardComponent = ({ imageURL, name }) => {
   console.log("imageURL:", imageURL);
   console.log("name:", name);
 
-  const photoUrl = imageURL?.[0]?.url;
+  const navigation = useNavigation();
+  const handleBuildingPress = () => {
+    navigation.navigate('DummyPromptScreen', { buildingData: { name, location, description } });
+  };
+
+  //const photoUrl = imageURL?.[0]?.url;
 
   return (
-    <TouchableOpacity style={ScrollStyles.centeredContainer}>
+    <TouchableOpacity style={ScrollStyles.centeredContainer} onPress={handleBuildingPress}>
       <View style={ScrollStyles.buildingCard}>
           {photoUrl ? (
             <Image

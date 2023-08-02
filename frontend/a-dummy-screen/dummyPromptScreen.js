@@ -8,7 +8,9 @@ import ButtonComponent from '../components/promptComponents/button';
 import SwipeCards from 'react-native-swipe-cards';
 import GenerateComponent from '../components/promptComponents/generateButton';
 import axios from 'axios';
+import { useRoute } from '@react-navigation/native';
 // 
+
 
 const initialPrompts = [
   { id: 1, title: 'Title 1', generatedPrompt: 'This is the generated line 1' },
@@ -31,6 +33,9 @@ const styles = StyleSheet.create({
 const Custom = () => <Text style={styles.text}></Text>; // Custom "nope" component
 
 const DummyPromptScreen = () => {
+  const route = useRoute();
+  const { buildingData} = route.params;
+
   const [prompts, setPrompts] = useState(initialPrompts);
   const [userinput, setuserinput] = useState('');
   const [responseText, setResponseText] = useState('');
@@ -95,6 +100,10 @@ const DummyPromptScreen = () => {
         <ButtonComponent text='copy' />
         <Text>                        </Text>
         <ButtonComponent text='share' />
+        <View>
+          <Text>Pickup Line for {buildingData.name}</Text>
+          <Text>{pickupLine}</Text>
+        </View>
       </View>
     </SafeAreaView>
   );
