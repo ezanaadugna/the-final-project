@@ -10,6 +10,7 @@ import axios from 'axios';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavBar from './BottomNavBar';
+import TitleHeader from '../components/styles/MapChatHeader';
 
 const Stack = createStackNavigator();
 
@@ -66,6 +67,7 @@ const DummyMapScreen = () => {
   };
   return (
     <SafeAreaView style={MapStyles.safeViewContainer}>
+      <TitleHeader />
       <MapComponent />
       <TouchableOpacity onPress={handleSeeMore} style={MapStyles.seeMoreButton}>
           <Text style={MapStyles.buttonText}>Choose Building</Text>

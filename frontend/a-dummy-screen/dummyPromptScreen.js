@@ -12,6 +12,7 @@ import { useRoute } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavBar from './BottomNavBar';
 import * as Sharing from 'expo-sharing';
+import TitleHeader from '../components/styles/MapChatHeader';
 // 
 
 
@@ -93,6 +94,7 @@ const DummyPromptScreen = ( {navigation}) => {
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
+      <TitleHeader />
         {/* <TextInput
           style={styles.input}
           placeholder="User Input"

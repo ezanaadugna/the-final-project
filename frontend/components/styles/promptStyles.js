@@ -60,7 +60,7 @@ const PromptStyles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
     width: '80%',
-    height: '90%',
+    height: '85%',
     alignItems: 'center',
     marginTop: 10,
   },
@@ -74,7 +74,7 @@ const PromptStyles = StyleSheet.create({
   },
   
   promptCardContent: {
-    fontSize: 15,
+    fontSize: 20,
     color: 'black',
     fontFamily: 'Courier New',
     display: 'flex', // Use flexbox for vertical centering
