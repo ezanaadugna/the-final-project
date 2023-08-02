@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { Button, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import commonStyles from '../components/styles/theme';
 import PromptStyles from '../components/styles/promptStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
 const Custom = () => <Text style={styles.text}></Text>; // Custom "nope" component
 
-const DummyPromptScreen = () => {
+const DummyPromptScreen = ( {navigation}) => {
   const route = useRoute();
   const { name } = route.params;
   const { description } = route.params;
@@ -123,7 +123,7 @@ const DummyPromptScreen = () => {
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-       <ButtonComponent text='Custom' onpress={() => navigation.navigate('Prompt Screen Manual')} />
+       <Button title="Custom" onPress={() => navigation.navigate('prompt screen manual')} />
        <Text>                     </Text> 
        <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
       </View> 

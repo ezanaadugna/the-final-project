@@ -115,7 +115,7 @@ const PromptScreenManual = () => {
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-       <ButtonComponent text='copy' />
+       <ButtonComponent text='TEST' />
        <Text>                     </Text> 
        <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
       </View> 
