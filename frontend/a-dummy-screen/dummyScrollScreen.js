@@ -27,6 +27,7 @@ const DummyScrollScreen = () => {
           <BuildingCardComponent
           imageURL={item.photos?.[0]?.url}
           name={item.name}
+          description={item.description}
           />
         )}
         keyExtractor={(item) => item.placeId}
