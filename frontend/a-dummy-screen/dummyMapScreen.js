@@ -4,7 +4,7 @@ import MapStyles from '../components/styles/mapStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 // import SearchComponent from '../components/mapComponents/searchBar'; 
 import MapComponent from '../components/mapComponents/mapComponent';
-import BulidingComponent from '../components/mapComponents/buildingComponent';
+// import BulidingComponent from '../components/mapComponents/buildingComponent';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
@@ -65,11 +65,6 @@ const DummyMapScreen = () => {
     <SafeAreaView style={MapStyles.safeViewContainer}>
       <MapComponent />
       {/* <SearchComponent /> */}
-      <ScrollView style={MapStyles.buildView}>
-        <BulidingComponent />
-        <BulidingComponent />
-        <BulidingComponent />
-      </ScrollView>
       <TouchableOpacity onPress={handleSeeMore} style={MapStyles.seeMoreButton}>
           <Text>See More</Text>
       </TouchableOpacity>

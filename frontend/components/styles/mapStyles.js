@@ -23,7 +23,7 @@ const MapStyles = StyleSheet.create({
 // Map
 
   container: {
-    height: '60%',
+    height: '80%',
     width: '85%',
     backgroundColor: '#fff',
     borderRadius: 20,
