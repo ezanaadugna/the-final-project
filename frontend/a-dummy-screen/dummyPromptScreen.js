@@ -13,16 +13,16 @@ import { useRoute } from '@react-navigation/native';
 
 
 const initialPrompts = [
-  { id: 1, title: 'Title 1', generatedPrompt: 'This is the generated line 1' },
-  { id: 2, title: 'Title 2', generatedPrompt: 'This is the generated line 2' },
-  { id: 3, title: 'Title 3', generatedPrompt: 'This is the generated line 3' },
-  { id: 4, title: 'Title 4', generatedPrompt: 'This is the generated line 4' },
-  { id: 5, title: 'Title 5', generatedPrompt: 'This is the generated line 5' },
-  { id: 6, title: 'Title 6', generatedPrompt: 'This is the generated line 6' },
-  { id: 7, title: 'Title 7', generatedPrompt: 'This is the generated line 7' },
-  { id: 8, title: 'Title 8', generatedPrompt: 'This is the generated line 8' },
-  { id: 9, title: 'Title 9', generatedPrompt: 'This is the generated line 9' },
-  { id: 10, title: 'Title 10', generatedPrompt: 'This is the generated line 10' },
+  { id: 1, title: 'Title 1', generatedPrompt: 'Loading pick up line.....' },
+  { id: 2, title: 'Title 2', generatedPrompt: 'Loading pick up line.....' },
+  { id: 3, title: 'Title 3', generatedPrompt: 'Loading pick up line.....' },
+  { id: 4, title: 'Title 4', generatedPrompt: 'Loading pick up line.....' },
+  { id: 5, title: 'Title 5', generatedPrompt: 'Loading pick up line.....' },
+  { id: 6, title: 'Title 6', generatedPrompt: 'Loading pick up line.....' },
+  { id: 7, title: 'Title 7', generatedPrompt: 'Loading pick up line.....' },
+  { id: 8, title: 'Title 8', generatedPrompt: 'Loading pick up line.....' },
+  { id: 9, title: 'Title 9', generatedPrompt: 'Loading pick up line.....' },
+  { id: 10, title: 'Title 10', generatedPrompt: 'Loading pick up line.....' },
   // Add more prompts as needed
 ];
 const styles = StyleSheet.create({
@@ -35,36 +35,55 @@ const Custom = () => <Text style={styles.text}></Text>; // Custom "nope" compone
 const DummyPromptScreen = () => {
   const route = useRoute();
   const { name } = route.params;
+  const { description } = route.params;
   console.log('name:', name);
+  console.log('description:', description);
 
   const [prompts, setPrompts] = useState(initialPrompts);
-  const [userinput, setuserinput] = useState('');
-  const [responseText, setResponseText] = useState('');
+  //const [responseText, setResponseText] = useState('');
+  const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
 
+  useEffect(() => {
+    // Fetch the initial API response when the component mounts
+    fetchPickupLine();
+  }, []);
 
-  const handleSubmit = () => {
+  const fetchPickupLine = () => {
     // Prepare the data to be sent to the server
     const data = {
-      userinput: userinput, // Pass the userinput from the state
+      userinput: name, description // Pass the userinput from the route params
     };
+
+
+  // const handleSubmit = () => {
+  //   // Prepare the data to be sent to the server
+  //   const data = {
+  //     userinput: name, description // Pass the userinput from the state
+  //   };
 
     axios.get('https://mapchat-55tf.onrender.com/chat', { params: data })
       .then(response => {
         console.log('Response from server:', response.data);
-        setResponseText(JSON.stringify(response.data, null));
+        const pickupLine = response.data.pickupline.replace(/"/g, '');
+
+        setPrompts(prevPrompts => {
+          const updatedPrompts = [...prevPrompts];
+          updatedPrompts[currentPromptIndex].generatedPrompt = pickupLine;
+          return updatedPrompts;
+        });
       })
+
       .catch(error => {
         console.error('Error:', error);
-        setResponseText('Error: ' + error.message);
+        //setResponseText('Error: ' + error.message);
       });
   };
 
 
   const handleCardRemoved = () => {
-    if (prompts.length > 0) {
-      handleSubmit();
-    }
-    setPrompts((prevPrompts) => prevPrompts.slice(1));
+    // Update the currentPromptIndex and fetch new response when a card is removed (swiped)
+    setCurrentPromptIndex(prevIndex => prevIndex + 1);
+    fetchPickupLine();
   };
 
   return (
@@ -79,15 +98,15 @@ const DummyPromptScreen = () => {
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity> */}
       <Text style={styles.responseText}>
-      </Text>
+      </Text> */}
       <SwipeCards
         cards={prompts}
         loop={false}
         renderCard={(prompt) => (
           <PromptCardComponent
             key={prompt.id}
-            title={prompt.title}
-            generatedPrompt={name}
+            title={name}
+            generatedPrompt={prompt.generatedPrompt}
           />
         )}
         renderNoMoreCards={() => (
