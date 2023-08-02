@@ -3,10 +3,10 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import ScrollStyles from '../styles/scrollStyles';
 import { useNavigation } from '@react-navigation/native';
 
-const BuildingCardComponent = ({ imageURL, name}) => {
+const BuildingCardComponent = ({ imageURL, name, description}) => {
   console.log("imageURL:", imageURL);
   console.log("name:", name);
-  //console.log("description:", description);
+  console.log("description:", description);
 
   const navigation = useNavigation();
   const handleBuildingPress = () => {
