@@ -94,7 +94,7 @@ const PromptStyles = StyleSheet.create({
   },
 
   swipeCard: {
-    width: '100%'
+    // width: '10%'
   }
 
 })

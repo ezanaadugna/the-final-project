@@ -119,8 +119,8 @@ const DummyPromptScreen = () => {
       />
       <View style={PromptStyles.buttonContainer}>
         <ButtonComponent text='copy' />
-       <Text>                        </Text> 
-        <ButtonComponent text='share' />
+       {/* <Text>                        </Text> 
+        <ButtonComponent text='share' /> */}
       </View> 
 
     </SafeAreaView>
