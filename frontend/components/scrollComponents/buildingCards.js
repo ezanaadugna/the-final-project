@@ -10,7 +10,7 @@ const BuildingCardComponent = ({ imageURL, name, description}) => {
 
   const navigation = useNavigation();
   const handleBuildingPress = () => {
-    navigation.navigate('dummy page prompt', { name });
+    navigation.navigate('dummy page prompt', { name, description });
   };
 
   const photoUrl = imageURL?.[0]?.url;
