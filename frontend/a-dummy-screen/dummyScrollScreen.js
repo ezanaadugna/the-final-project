@@ -8,6 +8,7 @@ import BuildingCardComponent from '../components/scrollComponents/buildingCards'
 import { useRoute } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavBar from './BottomNavBar';
+import TitleHeader from '../components/styles/MapChatHeader';
 
 
 const Stack = createStackNavigator();
@@ -19,6 +20,7 @@ const DummyScrollScreen = () => {
 
   return (
     <SafeAreaView style={ScrollStyles.container}>
+      <TitleHeader />
       {/* <ScrollView horizontal contentContainerStyle={ScrollStyles.typeContainer}>
         <TypeBoxComponent text="Religious" />
         <TypeBoxComponent text="Museum" />

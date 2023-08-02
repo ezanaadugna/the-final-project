@@ -7,7 +7,7 @@ const MapStyles = StyleSheet.create({
   safeViewContainer: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#C8F4F9'
+    backgroundColor: '#E3E8E9'
   },
   searchContainer: {
     padding: 10,
@@ -25,12 +25,12 @@ const MapStyles = StyleSheet.create({
 // Map
 
   container: {
-    height: '70%',
+    height: '75%',
     width: '85%',
     backgroundColor: '#fff',
     borderRadius: 20,
     overflow: 'hidden',
-    marginTop: 30,
+    marginTop: 0,
   },
 
   mapContainer: {
@@ -70,7 +70,7 @@ const MapStyles = StyleSheet.create({
   },
 
   seeMoreButton: {
-      backgroundColor: '#EEB5EB',
+      backgroundColor: '#3CACAE',
       borderRadius: 20,
       padding: 14,
       shadowColor: '#000',
@@ -84,7 +84,7 @@ const MapStyles = StyleSheet.create({
       width: '40%',
       height: '8%',
       alignItems: 'center',
-      marginTop: 20,
+      marginTop: 25,
       justifyContent: 'center',
       // marginRight: 170,
   },

@@ -8,7 +8,7 @@ const PromptStyles = StyleSheet.create({
     flex: 1,
     // justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#f0f0f0'
   },
 
   buttonCopy: {
@@ -44,7 +44,9 @@ const PromptStyles = StyleSheet.create({
   },
 
   promptCard: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
+    borderWidth: 5,
+    borderColor: '#bbf9ff',
     borderRadius: 30,
     padding: 20,
     shadowColor: '#000',
@@ -55,7 +57,7 @@ const PromptStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: '100%',
+    width: '80%',
     height: '85%',
     alignItems: 'center',
     marginTop: 60,
@@ -70,8 +72,8 @@ const PromptStyles = StyleSheet.create({
   },
   
   promptCardContent: {
-    fontSize: 25,
-    color: '#555',
+    fontSize: 20,
+    color: 'black',
     fontFamily: 'Courier New',
     display: 'flex', // Use flexbox for vertical centering
   },

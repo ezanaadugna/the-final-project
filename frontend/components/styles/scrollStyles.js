@@ -8,7 +8,7 @@ const ScrollStyles = StyleSheet.create({
     flex: 1,
     // justifyContent: 'center',
     // alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#E3E8E9'
   },
 
   typeContainer: {
