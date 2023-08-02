@@ -45,10 +45,10 @@ const PromptScreenManual = () => {
   const [responseText, setResponseText] = useState('');
   const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
 
-  // useEffect(() => {
-  //   // Fetch the initial API response when the component mounts
+  //  useEffect(() => {
+  // //   // Fetch the initial API response when the 
   //   fetchPickupLine();
-  // }, []);
+  //  }, []);
 
   // const handleSubmit 
   // const fetchPickupLine = () => {
@@ -84,13 +84,12 @@ const PromptScreenManual = () => {
   const handleCardRemoved = () => {
     // Update the currentPromptIndex and fetch new response when a card is removed (swiped)
     setCurrentPromptIndex(prevIndex => prevIndex + 1);
-    fetchPickupLine();
+    handleSubmit();
   };
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
          <TextInput
-          style={styles.input}
           placeholder="User Input"
           value={userinput}
           onChangeText={text => setuserinput(text)}
@@ -106,7 +105,7 @@ const PromptScreenManual = () => {
         renderCard={(prompt) => (
           <PromptCardComponent
             key={prompt.id}
-            title={name}
+            title={prompt.title}
             generatedPrompt={prompt.generatedPrompt}
           />
         )}
@@ -128,5 +127,5 @@ const PromptScreenManual = () => {
     </SafeAreaView>
   );
 };
-
+}
 export default PromptScreenManual;
