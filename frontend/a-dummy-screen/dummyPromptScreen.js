@@ -69,7 +69,7 @@ const DummyPromptScreen = () => {
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
-        <TextInput
+        {/* <TextInput
           style={styles.input}
           placeholder="User Input"
           value={userinput}
@@ -77,7 +77,7 @@ const DummyPromptScreen = () => {
         />
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
-      </TouchableOpacity>
+        </TouchableOpacity> */}
       <Text style={styles.responseText}>
       </Text>
       <SwipeCards
@@ -96,7 +96,13 @@ const DummyPromptScreen = () => {
         cardRemoved={handleCardRemoved}
         renderNope={() => <Custom />}
         renderYup={() => <Custom />}
+        styles={PromptStyles.swipeCard}
       />
+      <View style={PromptStyles.buttonContainer}>
+        <ButtonComponent text='copy' />
+       <Text>                        </Text> 
+        <ButtonComponent text='share' />
+      </View> 
 
     </SafeAreaView>
   );

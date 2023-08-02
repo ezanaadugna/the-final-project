@@ -55,7 +55,7 @@ const PromptStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: '92%',
+    width: '100%',
     height: '85%',
     alignItems: 'center',
     marginTop: 60,
@@ -91,6 +91,10 @@ const PromptStyles = StyleSheet.create({
     width: '95%',
     height: 50,
     alignItems: 'center',
+  },
+
+  swipeCard: {
+    width: '100%'
   }
 
 })
