@@ -5,11 +5,13 @@ import { StyleSheet } from 'react-native';
 const MapStyles = StyleSheet.create({
    
   safeViewContainer: {
+    flex: 1,
     alignItems: 'center',
+    backgroundColor: '#000000'
   },
   searchContainer: {
     padding: 10,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#fff',
     width: '90%'
     
   },
@@ -23,7 +25,7 @@ const MapStyles = StyleSheet.create({
 // Map
 
   container: {
-    height: '80%',
+    height: '70%',
     width: '85%',
     backgroundColor: '#fff',
     borderRadius: 20,
@@ -68,7 +70,7 @@ const MapStyles = StyleSheet.create({
   },
 
   seeMoreButton: {
-      backgroundColor: '#fff',
+      backgroundColor: '#9955BB',
       borderRadius: 20,
       padding: 14,
       shadowColor: '#000',
@@ -79,11 +81,16 @@ const MapStyles = StyleSheet.create({
       shadowOpacity: 0.2,
       shadowRadius: 4,
       elevation: 3,
-      width: 100,
-      height: 50,
+      width: '40%',
+      height: '8%',
       alignItems: 'center',
       marginTop: 20,
+      justifyContent: 'center',
       // marginRight: 170,
+  },
+
+  buttonText: {
+    color: 'white'
   }
 })
 

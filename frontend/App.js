@@ -10,21 +10,20 @@ import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createStackNavigator();
 function App() {
-  useEffect(() => {
-    // Hide the splash screen once the app component mounts
-    SplashScreen.hide();
-  }, []);
+  // useEffect(() => {
+  //   // Hide the splash screen once the app component mounts
+  //   SplashScreen.hide();
+  // }, []);
   return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="splashscreen">
-          <Stack.Screen name="splashscreen" component={SplashScreenComponent} />
+          <Stack.Screen name="splashscreen" component={SplashScreenComponent} options={{headerShown: false,}}/>
+          <Stack.Screen name="dummy page map" component={DummyMapScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page scroll" component={DummyScrollScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page prompt" component={DummyPromptScreen} options={{headerShown: false,}} />
-          <Stack.Screen name="dummy page map" component={DummyMapScreen} options={{headerShown: false,}} />
         </Stack.Navigator>
-        <BottomNavBar navigation={Stack.navigation} />
       </NavigationContainer>
   );
 };
 export default App;
-//<Stack.Screen name="ScrollScreen" component={ScrollScreen} />
+

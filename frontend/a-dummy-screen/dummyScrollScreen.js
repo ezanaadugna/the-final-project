@@ -6,6 +6,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import TypeBoxComponent from '../components/scrollComponents/typeBox'; 
 import BuildingCardComponent from '../components/scrollComponents/buildingCards'; 
 import { useRoute } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import BottomNavBar from './BottomNavBar';
+
+
+const Stack = createStackNavigator();
 
 const DummyScrollScreen = () => {
   const route = useRoute();
@@ -31,6 +36,8 @@ const DummyScrollScreen = () => {
         )}
         keyExtractor={(item) => item.placeId}
       />
+
+      <BottomNavBar navigation={Stack.navigation} />
     </SafeAreaView>
  
   );

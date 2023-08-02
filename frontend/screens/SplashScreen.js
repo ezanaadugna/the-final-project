@@ -14,7 +14,7 @@ const SplashScreen = ({ navigation }) => {
 
     // Navigate to the next screen after the splash screen time has passed
     simulateAsyncTask().then(() => {
-      navigation.replace('MapScreen'); // Replace 'MainScreen' with the name of your main app screen.
+      navigation.replace('dummy page map'); // Replace 'MainScreen' with the name of your main app screen.
     });
   }, [navigation]);
 

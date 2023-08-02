@@ -8,7 +8,10 @@ import MapComponent from '../components/mapComponents/mapComponent';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
+import { createStackNavigator } from '@react-navigation/stack';
+import BottomNavBar from './BottomNavBar';
 
+const Stack = createStackNavigator();
 
 const DummyMapScreen = () => {
   const navigation = useNavigation();
@@ -64,9 +67,8 @@ const DummyMapScreen = () => {
   return (
     <SafeAreaView style={MapStyles.safeViewContainer}>
       <MapComponent />
-      {/* <SearchComponent /> */}
       <TouchableOpacity onPress={handleSeeMore} style={MapStyles.seeMoreButton}>
-          <Text>See More</Text>
+          <Text style={MapStyles.buttonText}>Choose Building</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

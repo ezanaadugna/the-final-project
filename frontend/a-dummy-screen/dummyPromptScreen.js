@@ -9,8 +9,13 @@ import SwipeCards from 'react-native-swipe-cards';
 import GenerateComponent from '../components/promptComponents/generateButton';
 import axios from 'axios';
 import { useRoute } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import BottomNavBar from './BottomNavBar';
+import * as Sharing from 'expo-sharing';
 // 
 
+
+const Stack = createStackNavigator();
 
 const initialPrompts = [
   { id: 1, title: 'Title 1', generatedPrompt: 'Loading pick up line.....' },
@@ -118,11 +123,12 @@ const DummyPromptScreen = () => {
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-        <ButtonComponent text='copy' />
-       {/* <Text>                        </Text> 
-        <ButtonComponent text='share' /> */}
+       <ButtonComponent text='copy' />
+       <Text>                     </Text> 
+       <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
       </View> 
-
+      
+      <BottomNavBar navigation={Stack.navigation} />
     </SafeAreaView>
   );
 };
