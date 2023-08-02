@@ -10,10 +10,10 @@ import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createStackNavigator();
 function App() {
-  useEffect(() => {
-    // Hide the splash screen once the app component mounts
-    SplashScreen.hide();
-  }, []);
+  // useEffect(() => {
+  //   // Hide the splash screen once the app component mounts
+  //   SplashScreen.hide();
+  // }, []);
   return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="splashscreen">
