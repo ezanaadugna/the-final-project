@@ -7,7 +7,7 @@ const MapStyles = StyleSheet.create({
   safeViewContainer: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#000000'
+    backgroundColor: '#C8F4F9'
   },
   searchContainer: {
     padding: 10,
@@ -70,7 +70,7 @@ const MapStyles = StyleSheet.create({
   },
 
   seeMoreButton: {
-      backgroundColor: '#9955BB',
+      backgroundColor: '#EEB5EB',
       borderRadius: 20,
       padding: 14,
       shadowColor: '#000',
