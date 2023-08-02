@@ -10,8 +10,8 @@ class PromptBuilder {
     const systemContent = [
       {"role": "system", "content": "You are a helpful assistant."},
       {role: "user",
-      content:`Your purpose is to be a pick-up line generator. You should suggest a romantic fact or facts that can be used by architecture lovers as a pick-up line, based on the building name provided. Please follow the following instructions: 
-    - Provide a romantic fact that can be used by architecture lovers as a pick-up line using the building name ${userinput}. It should be romantic and witty. It should be around 2 lines long`}
+      content:`Your purpose is to be a pick-up line generator. You should suggest a romantic fact or facts that can be used by architecture lovers as a pick-up line, based on the user input. Please follow the following instructions: 
+    - Provide a romantic fact that can be used by architecture lovers as a pick-up line based on the following building ${userinput}. It should be romantic and witty, and can include useful facts. It should be around 3 lines long`}
     ];
 
 
