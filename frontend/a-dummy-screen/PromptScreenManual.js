@@ -45,22 +45,14 @@ const PromptScreenManual = () => {
   const [responseText, setResponseText] = useState('');
   const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
 
-  //  useEffect(() => {
-  // //   // Fetch the initial API response when the 
-  //   fetchPickupLine();
-  //  }, []);
+   useEffect(() => {
+    fetchPickupLine();
+   }, []);
 
-  // const handleSubmit 
-  // const fetchPickupLine = () => {
-  //   // Prepare the data to be sent to the server
-  // }
-
-
-  const handleSubmit = () => {
-  //   // Prepare the data to be sent to the server
+  const fetchPickupLine = () => {
     const data = {
-       userinput: userinput// Pass the userinput from the state
-  //   };
+       userinput: userinput
+   };
 
     axios.get('https://mapchat-55tf.onrender.com/chat', { params: data })
       .then(response => {
@@ -78,6 +70,11 @@ const PromptScreenManual = () => {
         console.error('Error:', error);
         //setResponseText('Error: ' + error.message);
       });
+  }
+
+  const handleSubmit = () => {
+    // Call the fetchPickupLine function to get a new pickup line
+    fetchPickupLine();
   };
 
 
@@ -127,5 +124,5 @@ const PromptScreenManual = () => {
     </SafeAreaView>
   );
 };
-}
+
 export default PromptScreenManual;
