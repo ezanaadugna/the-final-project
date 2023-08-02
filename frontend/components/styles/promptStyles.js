@@ -40,8 +40,9 @@ const PromptStyles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginTop: -50,
     marginBottom: 50,
-    backgroundColor: 'black',
+    // backgroundColor: 'white',
     height: 60,
   },
 
@@ -107,6 +108,8 @@ const PromptStyles = StyleSheet.create({
     width: '90%',
     borderRadius: 20,
     marginTop: 10,
+    alignContent: 'center',
+    justifyContent: 'center',
   },
 
   submitButton: {

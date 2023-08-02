@@ -9,8 +9,8 @@ class PromptBuilder {
 
     const systemContent = [
       {role: "user",
-      content:`You should suggest a romantic fact that can be used by lovers of architecture as a pick-up line, based on the user input. Please follow the following instructions: 
-    - Provide a romantic and funny chat that can be used by architecture lovers as a pick-up line based on the following building ${userinput}. Please include emojis. It should be romantic and witty, and funny. It should be around 2 lines long`}
+      content:`You should suggest a romantic fact that can be used by lovers of architecture as a pick-up line, based on the user input. Please follow the following instructions:
+      - Provide a romantic and funny chat that can be used by architecture lovers as a pick-up line based on the following building ${userinput}. Please include emojis. It should be romantic and witty, and funny. It should be around 2 lines long. It must be new.`}
     ];
 
 

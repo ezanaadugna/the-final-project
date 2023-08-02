@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const TitleHeader = () => {
   return (
     <View style={styles.header}>
-      <Text style={styles.title}>MapChat</Text>
+      <Text style={styles.title}>MAPCHAT</Text>
     </View>
   );
 };
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    borderBottomWidth: 0, // Optional: Add a border or change styles as per your design
+    borderBottomWidth: 1, // Optional: Add a border or change styles as per your design
     borderColor: '#ccc', // Optional: Border color
   },
   title: {

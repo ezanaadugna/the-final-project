@@ -12,6 +12,7 @@ import { useRoute } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavBar from './BottomNavBar';
 import * as Sharing from 'expo-sharing';
+import TitleHeader from '../components/styles/MapChatHeader';
 // 
 
 
@@ -86,9 +87,10 @@ const PromptScreenManual = () => {
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
+      <TitleHeader />
          <View style={PromptStyles.inputBox}>
          <TextInput
-          placeholder="Add..."
+          placeholder="Submit custom inputs..."
           value={userinput}
           onChangeText={text => setuserinput(text)}
         />

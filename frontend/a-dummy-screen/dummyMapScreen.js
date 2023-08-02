@@ -70,7 +70,7 @@ const DummyMapScreen = () => {
       <TitleHeader />
       <MapComponent />
       <TouchableOpacity onPress={handleSeeMore} style={MapStyles.seeMoreButton}>
-          <Text style={MapStyles.buttonText}>Choose Building</Text>
+          <Text style={MapStyles.buttonText}>Choose A Building Near You</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

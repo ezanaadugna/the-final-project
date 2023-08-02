@@ -125,7 +125,7 @@ const DummyPromptScreen = ( {navigation}) => {
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-       <Button title="Custom" onPress={() => navigation.navigate('prompt screen manual')} />
+       <Button title="custom" onPress={() => navigation.navigate('prompt screen manual')} />
        <Text>                     </Text> 
        <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
       </View> 

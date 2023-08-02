@@ -38,8 +38,9 @@ const DummyScrollScreen = () => {
         )}
         keyExtractor={(item) => item.placeId}
       />
-
-      <BottomNavBar navigation={Stack.navigation} />
+      <View style={ScrollStyles.centeredContainer}>
+        <BottomNavBar navigation={Stack.navigation} /> 
+      </View>
     </SafeAreaView>
  
   );

@@ -81,7 +81,7 @@ const MapStyles = StyleSheet.create({
       shadowOpacity: 0.2,
       shadowRadius: 4,
       elevation: 3,
-      width: '40%',
+      width: '60%',
       height: '8%',
       alignItems: 'center',
       marginTop: 25,
