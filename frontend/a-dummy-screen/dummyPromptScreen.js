@@ -100,6 +100,21 @@ const DummyPromptScreen = () => {
       alert('Prompt copied to clipboard!');
     }
   };
+
+  const handleSharePrompt = async () => {
+    const currentPrompt = prompts[currentPromptIndex];
+    if (currentPrompt) {
+      const title = currentPrompt.title;
+      const text = currentPrompt.generatedPrompt;
+      try {
+        await Sharing.shareAsync({ title, message: text });
+      } catch (error) {
+        console.error('Error sharing prompt:', error);
+
+      }
+    }
+  };
+
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
       <TitleHeader />
@@ -135,7 +150,7 @@ const DummyPromptScreen = () => {
       <View style={PromptStyles.buttonContainer}>
        <ButtonComponent text='copy' onPress={() => handleCopyPrompt(prompts[currentPromptIndex]?.generatedPrompt)}/>
        <Text>                     </Text> 
-       <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
+       <ButtonComponent text='share' onPress={handleSharePrompt} />
       </View> 
       
       <BottomNavBar navigation={Stack.navigation} />
