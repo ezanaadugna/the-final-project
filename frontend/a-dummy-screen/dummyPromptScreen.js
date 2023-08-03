@@ -13,6 +13,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavBar from './BottomNavBar';
 import * as Sharing from 'expo-sharing';
 import TitleHeader from '../components/styles/MapChatHeader';
+import * as Clipboard from 'expo-clipboard';
 // 
 
 
@@ -92,6 +93,13 @@ const DummyPromptScreen = () => {
     fetchPickupLine();
   };
 
+  const handleCopyPrompt = (promptText) => {
+    console.log('promptText:', promptText); 
+    if (promptText) {
+      Clipboard.setString(promptText);
+      alert('Prompt copied to clipboard!');
+    }
+  };
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
       <TitleHeader />
@@ -125,7 +133,7 @@ const DummyPromptScreen = () => {
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-       <ButtonComponent text='copy' />
+       <ButtonComponent text='copy' onPress={() => handleCopyPrompt(prompts[currentPromptIndex]?.generatedPrompt)}/>
        <Text>                     </Text> 
        <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
       </View> 
