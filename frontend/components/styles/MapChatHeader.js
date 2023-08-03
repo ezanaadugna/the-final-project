@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useFonts, Rowdies_300Light } from '@expo-google-fonts/rowdies';
 
 const TitleHeader = () => {
   return (
     <View style={styles.header}>
-      <Text style={styles.title}>MapChat</Text>
+      <Text style={styles.title}>MAPCHAT</Text>
     </View>
   );
 };
@@ -16,12 +17,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    borderBottomWidth: 0, // Optional: Add a border or change styles as per your design
+    borderBottomWidth: 1, // Optional: Add a border or change styles as per your design
     borderColor: '#ccc', // Optional: Border color
   },
   title: {
-    fontSize: 25,
+    fontSize: 35,
     fontWeight: 'bold',
+    fontFamily: 'Rowdies_300Light',
+    color: '#3CACAE',
+
     // You can adjust the title text styles based on your design
   },
 });

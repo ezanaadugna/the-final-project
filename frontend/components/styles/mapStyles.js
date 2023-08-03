@@ -5,7 +5,7 @@ const MapStyles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#E5EFF5', 
-    paddingVertical: 20,
+    paddingVertical: 0,
   },
   searchContainer: {
     paddingVertical: 10,
@@ -29,7 +29,7 @@ const MapStyles = StyleSheet.create({
     backgroundColor: '#F2F5F8', 
   },
   container: {
-    height: '75%',
+    height: '73%',
     width: '90%',
     backgroundColor: '#E5EFF5', 
     borderRadius: 20,
@@ -37,6 +37,7 @@ const MapStyles = StyleSheet.create({
     marginTop: 20,
     borderColor: '#F77F00', 
     borderWidth: 2,
+
   },
   mapContainer: {
     flex: 1,
@@ -74,20 +75,23 @@ const MapStyles = StyleSheet.create({
     fontFamily: 'Helvetica',
   },
   seeMoreButton: {
-    backgroundColor: '#F77F00', 
-    borderRadius: 20,
-    padding: 14,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.3, 
-    shadowRadius: 6,
-    elevation: 5,
-    width: '40%',
-    alignSelf: 'center',
-    marginTop: 25,
+      backgroundColor: '#3CACAE',
+      borderRadius: 20,
+      padding: 14,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 3,
+      width: '65%',
+      height: '8%',
+      alignItems: 'center',
+      marginTop: 25,
+      justifyContent: 'center',
+      // marginRight: 170,
   },
   buttonText: {
     color: 'white',
