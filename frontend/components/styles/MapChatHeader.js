@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     color: 'white',
+
     // You can adjust the title text styles based on your design
   },
 });

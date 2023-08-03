@@ -74,19 +74,44 @@ const ScrollStyles = StyleSheet.create({
 
 
   buildingCardTitle: {
-    flex: 0.45,
     fontSize: 25,
     fontFamily: 'Times New Roman',
     fontWeight: 'bold',
-    marginBottom: 0,
-    color: '#000',
+    color: '#fff', 
+  },
+  buildingCardTitleContainer: {
+    position: 'absolute',
+    bottom: 0, // Position the name at the bottom of the box
+    left: 0, // Position the name at the left of the box
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black background
+    borderRadius: 10,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
   },
 
-  buildingCardTitleContainer: {
+  buildingCardTitle: {
+    fontSize: 25,
+    fontFamily: 'Times New Roman',
+    fontWeight: 'bold',
+    color: '#fff',
+
+  },
+  /* buildingCardTitleContainer: {
     position: 'absolute',
     bottom: 10,
     left: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 3,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
   },
+*/
 
   buildingCardContent: {
     fontSize: 50,
