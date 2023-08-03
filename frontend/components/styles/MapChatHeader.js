@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 35,
     fontWeight: 'bold',
-    fontFamily: 'Rowdies_300Light',
     color: '#3CACAE',
 
     // You can adjust the title text styles based on your design

@@ -21,7 +21,7 @@ function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="splashscreen">
-        <Stack.Screen name="splashscreen" component={SplashScreenComponent} options={{headerShown: false,}}/>
+          <Stack.Screen name="splashscreen" component={SplashScreenComponent} options={{headerShown: false,}}/>
           <Stack.Screen name="dummy page map" component={DummyMapScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page scroll" component={DummyScrollScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page prompt" component={DummyPromptScreen} options={{headerShown: false,}} />
