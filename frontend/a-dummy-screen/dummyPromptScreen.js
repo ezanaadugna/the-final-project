@@ -3,8 +3,8 @@ import { Button, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'rea
 import commonStyles from '../components/styles/theme';
 import PromptStyles from '../components/styles/promptStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import PromptCardComponent from '../components/promptComponents/promptCard'; 
-import ButtonComponent from '../components/promptComponents/button'; 
+import PromptCardComponent from '../components/promptComponents/promptCard';
+import ButtonComponent from '../components/promptComponents/button';
 import SwipeCards from 'react-native-swipe-cards';
 import GenerateComponent from '../components/promptComponents/generateButton';
 import axios from 'axios';
@@ -13,11 +13,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavBar from './BottomNavBar';
 import * as Sharing from 'expo-sharing';
 import TitleHeader from '../components/styles/MapChatHeader';
-// 
-
+import * as Clipboard from 'expo-clipboard';
+import * as FileSystem from 'expo-file-system';
 
 const Stack = createStackNavigator();
-
 const initialPrompts = [
   { id: 1, title: 'Title 1', generatedPrompt: 'Loading pick up line.....' },
   { id: 2, title: 'Title 2', generatedPrompt: 'Loading pick up line.....' },
@@ -29,8 +28,8 @@ const initialPrompts = [
   { id: 8, title: 'Title 8', generatedPrompt: 'Loading pick up line.....' },
   { id: 9, title: 'Title 9', generatedPrompt: 'Loading pick up line.....' },
   { id: 10, title: 'Title 10', generatedPrompt: 'Loading pick up line.....' },
-  // Add more prompts as needed
 ];
+
 const styles = StyleSheet.create({
   text: {
   },
@@ -42,6 +41,7 @@ const DummyPromptScreen = ( {navigation}) => {
   const route = useRoute();
   const { name } = route.params;
   const { description } = route.params;
+
   console.log('name:', name);
   console.log('description:', description);
 
@@ -57,53 +57,73 @@ const DummyPromptScreen = ( {navigation}) => {
   const fetchPickupLine = () => {
     // Prepare the data to be sent to the server
     const data = {
-      userinput: name, description // Pass the userinput from the route params
+      userinput: name,
+      description, // Pass the userinput from the route params
     };
 
-
-  // const handleSubmit = () => {
-  //   // Prepare the data to be sent to the server
-  //   const data = {
-  //     userinput: name, description // Pass the userinput from the state
-  //   };
-
-    axios.get('https://mapchat-55tf.onrender.com/chat', { params: data })
-      .then(response => {
+    // const handleSubmit = () => {
+    //   // Prepare the data to be sent to the server
+    //   const data = {
+    //     userinput: name,
+    //     description, // Pass the userinput from the state
+    //   };
+    
+    axios
+      .get('https://mapchat-55tf.onrender.com/chat', { params: data })
+      .then((response) => {
         console.log('Response from server:', response.data);
         const pickupLine = response.data.pickupline.replace(/"/g, '');
-
-        setPrompts(prevPrompts => {
+        setPrompts((prevPrompts) => {
           const updatedPrompts = [...prevPrompts];
           updatedPrompts[currentPromptIndex].generatedPrompt = pickupLine;
           return updatedPrompts;
         });
       })
-
-      .catch(error => {
+      .catch((error) => {
         console.error('Error:', error);
         //setResponseText('Error: ' + error.message);
       });
   };
 
-
   const handleCardRemoved = () => {
     // Update the currentPromptIndex and fetch new response when a card is removed (swiped)
-    setCurrentPromptIndex(prevIndex => prevIndex + 1);
+    setCurrentPromptIndex((prevIndex) => prevIndex + 1);
     fetchPickupLine();
+  };
+
+  const handleCopyPrompt = (promptText) => {
+    console.log('promptText:', promptText);
+    if (promptText) {
+      Clipboard.setString(promptText);
+      alert('Prompt copied to clipboard!');
+    }
+  };
+
+  const handleSharePrompt = async () => {
+    const currentPrompt = prompts[currentPromptIndex];
+    const message = `${currentPrompt.title}\n${currentPrompt.generatedPrompt}`;
+    try {
+      const fileUri = FileSystem.cacheDirectory + 'prompt.txt';
+      await FileSystem.writeAsStringAsync(fileUri, message);
+      await Sharing.shareAsync(fileUri);
+    } catch (error) {
+      // Handle error
+      console.error('Error sharing prompt:', error);
+    }
   };
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
       <TitleHeader />
-        {/* <TextInput
-          style={styles.input}
-          placeholder="User Input"
-          value={userinput}
-          onChangeText={text => setuserinput(text)}
-        />
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-          <Text style={styles.buttonText}>Submit</Text>
-        </TouchableOpacity>
+      {/* <TextInput
+        style={styles.input}
+        placeholder="User Input"
+        value={userinput}
+        onChangeText={text => setuserinput(text)}
+      />
+      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+        <Text style={styles.buttonText}>Submit</Text>
+      </TouchableOpacity>
       <Text style={styles.responseText}>
       </Text> */}
       <SwipeCards
@@ -116,20 +136,18 @@ const DummyPromptScreen = ( {navigation}) => {
             generatedPrompt={prompt.generatedPrompt}
           />
         )}
-        renderNoMoreCards={() => (
-          <GenerateComponent text='Generate More Prompts' />
-        )}
+        renderNoMoreCards={() => <GenerateComponent text='Generate More Prompts' />}
         cardRemoved={handleCardRemoved}
         renderNope={() => <Custom />}
         renderYup={() => <Custom />}
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-       <Button title="custom" onPress={() => navigation.navigate('prompt screen manual')} />
-       <Text>                     </Text> 
-       <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
-      </View> 
-      
+
+        <ButtonComponent text='copy' onPress={() => handleCopyPrompt(prompts[currentPromptIndex]?.generatedPrompt)} />
+        <Text>                     </Text>
+        <ButtonComponent text='share' onPress={handleSharePrompt} />
+      </View>
       <BottomNavBar navigation={Stack.navigation} />
     </SafeAreaView>
   );
