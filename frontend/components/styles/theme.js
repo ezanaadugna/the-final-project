@@ -17,7 +17,7 @@ const commonStyles = StyleSheet.create({
     flex: 1,
     // justifyContent: 'center',
     // alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: 'f0f0f0',
   },
 
   text: {
