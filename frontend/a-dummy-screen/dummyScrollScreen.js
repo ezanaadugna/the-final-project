@@ -31,6 +31,7 @@ const DummyScrollScreen = () => {
         data={nearbyBuildings}
         renderItem={({ item }) => (
           <BuildingCardComponent
+          placeId={item.placeId}
           imageURL={item.photos?.[0]?.url}
           name={item.name}
           description={item.description}
