@@ -12,9 +12,9 @@ const PromptStyles = StyleSheet.create({
   },
 
   buttonCopy: {
-    backgroundColor: '#fff',
+    backgroundColor: '#3CACAE',
     borderRadius: 15,
-    padding: 14,
+    padding: 0,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -23,23 +23,22 @@ const PromptStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: 100,
-    height: 50,
+    width: 85,
+    height: 40,
     alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 40,
-    marginLeft: 40,
-    marginRight: 40,
   },
 
   buttonContent: {
-    fontSize: 20,
-    color: '#555',
-    fontFamily: 'Courier New',
+    fontSize: 17,
+    color: 'white',
   },
 
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
+    alignContent: 'center',
     marginTop: -50,
     marginBottom: 50,
     // backgroundColor: 'white',
@@ -48,8 +47,6 @@ const PromptStyles = StyleSheet.create({
 
   promptCard: {
     backgroundColor: 'white',
-    borderWidth: 5,
-    borderColor: '#bbf9ff',
     borderRadius: 30,
     padding: 20,
     shadowColor: '#000',
@@ -69,7 +66,7 @@ const PromptStyles = StyleSheet.create({
   promptCardTitle: {
     flex: 0.45,
     fontSize: 30,
-    fontFamily: 'Times New Roman',
+    // fontFamily: 'Times New Roman',
     fontWeight: 'bold',
     marginBottom: 8,
   },
@@ -77,7 +74,7 @@ const PromptStyles = StyleSheet.create({
   promptCardContent: {
     fontSize: 20,
     color: 'black',
-    fontFamily: 'Courier New',
+    // fontFamily: 'Courier New',
     display: 'flex', // Use flexbox for vertical centering
   },
 

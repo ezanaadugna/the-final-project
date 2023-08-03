@@ -21,7 +21,7 @@ const BuildingCardComponent = ({ placeId, name, description}) => {
         const data = response.data;
         setImageURL(data.photos[0]?.url);
       } catch (error) {
-        console.error('Error fetching building details:', error);
+        // console.error('Error fetching building details:', error);
       }
     };
     fetchBuildingDetails();

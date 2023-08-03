@@ -143,9 +143,10 @@ const DummyPromptScreen = ( {navigation}) => {
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-
         <ButtonComponent text='copy' onPress={() => handleCopyPrompt(prompts[currentPromptIndex]?.generatedPrompt)} />
-        <Text>                     </Text>
+        <Text>     </Text>
+        <ButtonComponent text="custom" onPress={() => navigation.navigate('prompt screen manual')} />
+        <Text>     </Text>
         <ButtonComponent text='share' onPress={handleSharePrompt} />
       </View>
       <BottomNavBar navigation={Stack.navigation} />

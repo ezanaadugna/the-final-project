@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 35,
     fontWeight: 'bold',
-    color: '#3CACAE',
+    color: '#6d36c7',
 
     // You can adjust the title text styles based on your design
   },

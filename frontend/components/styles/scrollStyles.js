@@ -36,7 +36,7 @@ const ScrollStyles = StyleSheet.create({
   typeBoxContent: {
     fontSize: 20,
     color: '#555',
-    fontFamily: 'Courier New',
+    // fontFamily: 'Courier New',
   },
 
   centeredContainer: {
@@ -83,7 +83,7 @@ const ScrollStyles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 4,
     width: '100%',
-    justifyContent: 'center'
+    alignItems: 'center'
   },
 
   buildingCardTitle: {
@@ -111,7 +111,7 @@ const ScrollStyles = StyleSheet.create({
   buildingCardContent: {
     fontSize: 50,
     color: '#555',
-    fontFamily: 'Courier New',
+    // fontFamily: 'Courier New',
     display: 'flex', // Use flexbox for vertical centering
   },
 })

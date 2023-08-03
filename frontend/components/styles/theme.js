@@ -10,7 +10,7 @@ const commonStyles = StyleSheet.create({
     fontSize: 20,
     color: 'black',
     marginTop: 0,
-    fontFamily: 'Arial', 
+    // fontFamily: 'Arial', 
     fontWeight: 'bold', 
   },
   container: {
@@ -23,7 +23,7 @@ const commonStyles = StyleSheet.create({
   text: {
     fontSize: 20,
     color: 'black',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
     // fontWeight: 'bold', 
   },
 

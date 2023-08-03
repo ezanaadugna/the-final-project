@@ -13,6 +13,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavBar from './BottomNavBar';
 import * as Sharing from 'expo-sharing';
 import TitleHeader from '../components/styles/MapChatHeader';
+import * as Clipboard from 'expo-clipboard';
+import * as FileSystem from 'expo-file-system';
+
 // 
 
 
@@ -85,6 +88,27 @@ const PromptScreenManual = () => {
     handleSubmit();
   };
 
+  const handleSharePrompt = async () => {
+    const currentPrompt = prompts[currentPromptIndex];
+    const message = `${currentPrompt.title}\n${currentPrompt.generatedPrompt}`;
+    try {
+      const fileUri = FileSystem.cacheDirectory + 'prompt.txt';
+      await FileSystem.writeAsStringAsync(fileUri, message);
+      await Sharing.shareAsync(fileUri);
+    } catch (error) {
+      // Handle error
+      console.error('Error sharing prompt:', error);
+    }
+  };
+
+  const handleCopyPrompt = (promptText) => {
+    console.log('promptText:', promptText);
+    if (promptText) {
+      Clipboard.setString(promptText);
+      alert('Prompt copied to clipboard!');
+    }
+  };
+  
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
       <TitleHeader />
@@ -109,7 +133,7 @@ const PromptScreenManual = () => {
         renderCard={(prompt) => (
           <PromptCardComponent
             key={prompt.id}
-            title={prompt.title}
+            title={userinput}
             generatedPrompt={prompt.generatedPrompt}
           />
         )}
@@ -122,9 +146,9 @@ const PromptScreenManual = () => {
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-       <ButtonComponent text='TEST' />
-       <Text>                     </Text> 
-       <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
+        <ButtonComponent text='copy' onPress={() => handleCopyPrompt(prompts[currentPromptIndex]?.generatedPrompt)} />
+        <Text>                     </Text> 
+        <ButtonComponent text='share' onPress={handleSharePrompt} />
       </View> 
       
       <BottomNavBar navigation={Stack.navigation} />
@@ -132,4 +156,4 @@ const PromptScreenManual = () => {
   );
 };
 
-export default PromptScreenManual;
+export default PromptScreenManual

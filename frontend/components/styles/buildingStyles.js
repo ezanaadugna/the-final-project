@@ -33,7 +33,7 @@ const BuildingStyles = StyleSheet.create({
   headerText: {
     fontSize: 20,
     color: 'black',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
     // fontWeight: 'bold', 
   },
 

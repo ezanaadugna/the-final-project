@@ -16,8 +16,10 @@ function App() {
   //   // Hide the splash screen once the app component mounts
   //   SplashScreen.hide();
   // }, []);
-  LogBox.ignoreLogs(['Warning message 1', 'Warning message 2', 'Warning message 3',]);
+  // LogBox.ignoreLogs(['Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`', "Constants.platform.ios.model has been deprecated in favor of expo-device's Device.modelName property. This API will be removed in SDK 45.", 'Warning message 3',]);
 
+  LogBox.ignoreAllLogs();
+  
   return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="splashscreen">

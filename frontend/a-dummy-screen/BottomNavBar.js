@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
     // backgroundColor: 'black',
     height: 80,
     width: '100%',
-    borderTopWidth: 2,
+    borderTopWidth: 0.7,
     // borderTopColor: 'white',
     elevation: 10,
-    borderRadius: 0,
+    borderRadius: 1,
     marginHorizontal: 20,
   },
   button: {
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 20,
-    backgroundColor: 'white',
+    backgroundColor: '#ccc',
   },
   buttonText: {
     marginLeft: 8, // Add some space between the icon and text

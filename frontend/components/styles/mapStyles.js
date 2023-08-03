@@ -35,12 +35,26 @@ const MapStyles = StyleSheet.create({
     borderRadius: 20,
     overflow: 'hidden',
     marginTop: 20,
-    borderColor: '#F77F00', 
-    borderWidth: 2,
+    // borderColor: '#F77F00', 
+    // borderWidth: 2,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3, 
+    shadowRadius: 8,
 
   },
   mapContainer: {
     flex: 1,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
   },
   map: {
     ...StyleSheet.absoluteFillObject,
