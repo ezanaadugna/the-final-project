@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useFonts, Rowdies_300Light } from '@expo-google-fonts/rowdies';
 
 const TitleHeader = () => {
   return (
@@ -20,9 +21,10 @@ const styles = StyleSheet.create({
     borderColor: '#ccc', // Optional: Border color
   },
   title: {
-    fontSize: 25,
+    fontSize: 35,
     fontWeight: 'bold',
-    color: 'white',
+    fontFamily: 'Rowdies_300Light',
+    color: '#3CACAE',
 
     // You can adjust the title text styles based on your design
   },

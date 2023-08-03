@@ -5,7 +5,7 @@ const MapStyles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#E5EFF5', 
-    paddingVertical: 20,
+    paddingVertical: 0,
   },
   searchContainer: {
     paddingVertical: 10,
@@ -29,7 +29,7 @@ const MapStyles = StyleSheet.create({
     backgroundColor: '#F2F5F8', 
   },
   container: {
-    height: '75%',
+    height: '73%',
     width: '90%',
     backgroundColor: '#E5EFF5', 
     borderRadius: 20,
@@ -86,7 +86,7 @@ const MapStyles = StyleSheet.create({
       shadowOpacity: 0.2,
       shadowRadius: 4,
       elevation: 3,
-      width: '60%',
+      width: '65%',
       height: '8%',
       alignItems: 'center',
       marginTop: 25,

@@ -62,6 +62,8 @@ const ScrollStyles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20,
     overflow: 'hidden', 
+    // borderColor: 'black',
+    // borderWidth: 2,
   },
 
   buildingCardContentImage: {
@@ -72,13 +74,6 @@ const ScrollStyles = StyleSheet.create({
     borderRadius: 20, // Add borderRadius if needed
   },
 
-
-  buildingCardTitle: {
-    fontSize: 25,
-    fontFamily: 'Times New Roman',
-    fontWeight: 'bold',
-    color: '#fff', 
-  },
   buildingCardTitleContainer: {
     position: 'absolute',
     bottom: 0, // Position the name at the bottom of the box
@@ -87,12 +82,12 @@ const ScrollStyles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 8,
     paddingVertical: 4,
+    width: '100%',
+    justifyContent: 'center'
   },
 
   buildingCardTitle: {
-    fontSize: 25,
-    fontFamily: 'Times New Roman',
-    fontWeight: 'bold',
+    fontSize: 20,
     color: '#fff',
 
   },
