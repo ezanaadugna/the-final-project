@@ -7,7 +7,7 @@ const MapStyles = StyleSheet.create({
   safeViewContainer: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#E3E8E9'
+    backgroundColor: '#4B0082'
   },
   searchContainer: {
     padding: 10,
