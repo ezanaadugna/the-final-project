@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderBoxComponent renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "borderRadius": 10,
+      "elevation": 3,
+      "height": "10%",
+      "justifyContent": "center",
+      "marginTop": 40,
+      "padding": 10,
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.2,
+      "shadowRadius": 4,
+      "width": "90%",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "black",
+        "fontFamily": "Helvetica",
+        "fontSize": 20,
+      }
+    }
+  >
+    Test Header
+  </Text>
+</View>
+`;
