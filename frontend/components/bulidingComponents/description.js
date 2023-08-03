@@ -2,13 +2,14 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import BuildingStyles from '../../components/styles/buildingStyles';
 
-
-const DecriptionComponent = ({ decriptionText }) => {
+const DecriptionComponent = ({ descriptionText }) => {
   return (
     <View style={BuildingStyles.descriptionContainer}>
-      <Text style={BuildingStyles.descriptionText}> {decriptionText}</Text>
+      <Text testID="descriptionText" style={BuildingStyles.descriptionText}>
+        {descriptionText}
+      </Text>
     </View>
+  );
+};
 
-)};
-
-export default DecriptionComponent
+export default DecriptionComponent;
