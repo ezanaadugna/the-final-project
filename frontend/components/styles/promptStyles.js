@@ -105,8 +105,8 @@ const PromptStyles = StyleSheet.create({
   inputBox: {
     padding: 10,
     backgroundColor: '#fff',
-    width: '90%',
-    borderRadius: 20,
+    width: '60%',
+    borderRadius: 15,
     marginTop: 10,
     alignContent: 'center',
     justifyContent: 'center',
@@ -115,7 +115,7 @@ const PromptStyles = StyleSheet.create({
   submitButton: {
     marginTop: 10,
     backgroundColor: '#fff',
-    borderRadius: 20,
+    borderRadius: 15,
     padding: 2,
     shadowColor: '#000',
     shadowOffset: {
@@ -125,10 +125,17 @@ const PromptStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3,
-    width: '25%',
-    height: 30,
+    width: '19%',
+    height: 40,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginLeft: 10,
+  },
+
+  inputRow: {
+    flexDirection: 'row',
+    // justifyContent: 'space-around',
+
   }
 
 })

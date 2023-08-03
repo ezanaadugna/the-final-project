@@ -88,7 +88,8 @@ const PromptScreenManual = () => {
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
       <TitleHeader />
-         <View style={PromptStyles.inputBox}>
+      <View style={PromptStyles.inputRow}>
+        <View style={PromptStyles.inputBox}>
          <TextInput
           placeholder="Submit custom inputs..."
           value={userinput}
@@ -98,6 +99,8 @@ const PromptScreenManual = () => {
         <TouchableOpacity style={PromptStyles.submitButton} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
+      </View>
+         
       <Text style={styles.responseText}>
       </Text> 
       <SwipeCards
