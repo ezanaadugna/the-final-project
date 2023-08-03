@@ -13,11 +13,19 @@
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
     "axios": "^1.4.0",
+<<<<<<< HEAD
     "expo": "^49.0.0",
     "expo-clipboard": "~4.3.0",
     "expo-location": "~16.1.0",
     "expo-sharing": "~11.5.0",
     "expo-status-bar": "~1.6.0",
+=======
+    "expo": "~48.0.18",
+    "expo-clipboard": "~4.1.2",
+    "expo-location": "~15.1.1",
+    "expo-sharing": "~11.2.2",
+    "expo-status-bar": "~1.4.4",
+>>>>>>> 5d7c2454660d1ebe7cfedc7cfa06719f4a61f685
     "install": "^0.13.0",
     "npx": "^10.2.2",
     "react": "18.2.0",
