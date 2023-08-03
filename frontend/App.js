@@ -6,10 +6,9 @@ import DummyPromptScreen from './a-dummy-screen/dummyPromptScreen';
 import DummyScrollScreen from './a-dummy-screen/dummyScrollScreen';
 import DummyMapScreen from './a-dummy-screen/dummyMapScreen';
 import SplashScreenComponent from './screens/SplashScreen';
-import BottomNavBar from './a-dummy-screen/BottomNavBar';
-import SplashScreen from 'react-native-splash-screen';
+// import BottomNavBar from './a-dummy-screen/BottomNavBar';
+// import SplashScreen from 'react-native-splash-screen';
 import PromptScreenManual from './a-dummy-screen/PromptScreenManual';
-import TempNavScreen from './screens/TempNavScreen';
 
 const Stack = createStackNavigator();
 function App() {
@@ -21,8 +20,8 @@ function App() {
 
   return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="temp nav screen">
-          <Stack.Screen name="temp nav screen" component={TempNavScreen} options={{headerShown: false,}}/>
+        <Stack.Navigator initialRouteName="splashscreen">
+        <Stack.Screen name="splashscreen" component={SplashScreenComponent} options={{headerShown: false,}}/>
           <Stack.Screen name="dummy page map" component={DummyMapScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page scroll" component={DummyScrollScreen} options={{headerShown: false,}} />
           <Stack.Screen name="dummy page prompt" component={DummyPromptScreen} options={{headerShown: false,}} />
