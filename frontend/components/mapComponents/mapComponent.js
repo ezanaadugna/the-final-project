@@ -67,7 +67,7 @@ const MapComponent = () => {
             }}
           >
             
-            <Marker coordinate={currentLocation} title="You are here" pinColor="blue" />
+            <Marker coordinate={currentLocation} title="You are here" pinColor="orange" />
 
            
             {nearbyBuildings.map((building, index) => (
@@ -78,6 +78,7 @@ const MapComponent = () => {
                   longitude: building.location.coordinates[0],
                 }}
                 title={building.name}
+                pinColor="purple"
               />
             ))}
           </MapView>
