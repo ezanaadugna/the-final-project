@@ -68,7 +68,7 @@ const PromptStyles = StyleSheet.create({
 
   promptCardTitle: {
     flex: 0.45,
-    fontSize: 18,
+    fontSize: 30,
     fontFamily: 'Times New Roman',
     fontWeight: 'bold',
     marginBottom: 8,
