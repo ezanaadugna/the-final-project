@@ -14,6 +14,7 @@ import BottomNavBar from './BottomNavBar';
 import * as Sharing from 'expo-sharing';
 import TitleHeader from '../components/styles/MapChatHeader';
 import * as Clipboard from 'expo-clipboard';
+import * as FileSystem from 'expo-file-system';
 // 
 
 
@@ -101,17 +102,19 @@ const DummyPromptScreen = () => {
     }
   };
 
+ 
   const handleSharePrompt = async () => {
     const currentPrompt = prompts[currentPromptIndex];
-    if (currentPrompt) {
-      const title = currentPrompt.title;
-      const text = currentPrompt.generatedPrompt;
-      try {
-        await Sharing.shareAsync({ title, message: text });
-      } catch (error) {
-        console.error('Error sharing prompt:', error);
-
-      }
+    const message = `${currentPrompt.title}\n${currentPrompt.generatedPrompt}`;
+  
+    try {
+      const fileUri = FileSystem.cacheDirectory + 'prompt.txt';
+      await FileSystem.writeAsStringAsync(fileUri, message);
+  
+      await Sharing.shareAsync(fileUri);
+    } catch (error) {
+      // Handle error
+      console.error('Error sharing prompt:', error);
     }
   };
 
