@@ -40,7 +40,10 @@ const PromptStyles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 60,
+    marginTop: -50,
+    marginBottom: 50,
+    // backgroundColor: 'white',
+    height: 60,
   },
 
   promptCard: {
@@ -60,7 +63,7 @@ const PromptStyles = StyleSheet.create({
     width: '80%',
     height: '85%',
     alignItems: 'center',
-    marginTop: 60,
+    marginTop: 10,
   },
 
   promptCardTitle: {
@@ -97,6 +100,42 @@ const PromptStyles = StyleSheet.create({
 
   swipeCard: {
     // width: '10%'
+  },
+
+  inputBox: {
+    padding: 10,
+    backgroundColor: '#fff',
+    width: '60%',
+    borderRadius: 15,
+    marginTop: 10,
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
+
+  submitButton: {
+    marginTop: 10,
+    backgroundColor: '#fff',
+    borderRadius: 15,
+    padding: 2,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+    width: '19%',
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 10,
+  },
+
+  inputRow: {
+    flexDirection: 'row',
+    // justifyContent: 'space-around',
+
   }
 
 })

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import commonStyles from '../components/styles/theme';
 import PromptStyles from '../components/styles/promptStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -38,34 +38,22 @@ const styles = StyleSheet.create({
 
 const Custom = () => <Text style={styles.text}></Text>; // Custom "nope" component
 
-const DummyPromptScreen = ( {navigation}) => {
-  const route = useRoute();
-  const { name } = route.params;
-  const { description } = route.params;
-  console.log('name:', name);
-  console.log('description:', description);
+const PromptScreenManual = () => {
+  //const route = useRoute();
 
   const [prompts, setPrompts] = useState(initialPrompts);
-  //const [responseText, setResponseText] = useState('');
+  const [userinput, setuserinput] = useState('');
+  const [responseText, setResponseText] = useState('');
   const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
 
-  useEffect(() => {
-    // Fetch the initial API response when the component mounts
+   useEffect(() => {
     fetchPickupLine();
-  }, []);
+   }, []);
 
   const fetchPickupLine = () => {
-    // Prepare the data to be sent to the server
     const data = {
-      userinput: name, description // Pass the userinput from the route params
-    };
-
-
-  // const handleSubmit = () => {
-  //   // Prepare the data to be sent to the server
-  //   const data = {
-  //     userinput: name, description // Pass the userinput from the state
-  //   };
+       userinput: userinput
+   };
 
     axios.get('https://mapchat-55tf.onrender.com/chat', { params: data })
       .then(response => {
@@ -83,36 +71,45 @@ const DummyPromptScreen = ( {navigation}) => {
         console.error('Error:', error);
         //setResponseText('Error: ' + error.message);
       });
+  }
+
+  const handleSubmit = () => {
+    // Call the fetchPickupLine function to get a new pickup line
+    fetchPickupLine();
   };
 
 
   const handleCardRemoved = () => {
     // Update the currentPromptIndex and fetch new response when a card is removed (swiped)
     setCurrentPromptIndex(prevIndex => prevIndex + 1);
-    fetchPickupLine();
+    handleSubmit();
   };
 
   return (
     <SafeAreaView style={PromptStyles.promptContainer}>
       <TitleHeader />
-        {/* <TextInput
-          style={styles.input}
-          placeholder="User Input"
+      <View style={PromptStyles.inputRow}>
+        <View style={PromptStyles.inputBox}>
+         <TextInput
+          placeholder="Submit custom inputs..."
           value={userinput}
           onChangeText={text => setuserinput(text)}
         />
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+        </View>
+        <TouchableOpacity style={PromptStyles.submitButton} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
+      </View>
+         
       <Text style={styles.responseText}>
-      </Text> */}
+      </Text> 
       <SwipeCards
         cards={prompts}
         loop={false}
         renderCard={(prompt) => (
           <PromptCardComponent
             key={prompt.id}
-            title={name}
+            title={prompt.title}
             generatedPrompt={prompt.generatedPrompt}
           />
         )}
@@ -125,7 +122,7 @@ const DummyPromptScreen = ( {navigation}) => {
         styles={PromptStyles.swipeCard}
       />
       <View style={PromptStyles.buttonContainer}>
-       <Button title="custom" onPress={() => navigation.navigate('prompt screen manual')} />
+       <ButtonComponent text='TEST' />
        <Text>                     </Text> 
        <ButtonComponent text='share' onPress={() => Sharing.shareAsync(prompts)} />
       </View> 
@@ -135,4 +132,4 @@ const DummyPromptScreen = ( {navigation}) => {
   );
 };
 
-export default DummyPromptScreen;
+export default PromptScreenManual;

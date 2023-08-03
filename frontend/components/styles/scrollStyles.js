@@ -61,7 +61,7 @@ const ScrollStyles = StyleSheet.create({
     height: 150,
     alignItems: 'center',
     marginTop: 20,
-    // overflow: 'hidden', 
+    overflow: 'hidden', 
   },
 
   buildingCardContentImage: {
@@ -119,7 +119,6 @@ const ScrollStyles = StyleSheet.create({
     fontFamily: 'Courier New',
     display: 'flex', // Use flexbox for vertical centering
   },
-
 })
 
 export default ScrollStyles
