@@ -14,7 +14,7 @@
     "@react-navigation/stack": "^6.3.17",
     "axios": "^1.4.0",
     "expo": "~48.0.18",
-    "expo-clipboard": "^4.3.0",
+    "expo-clipboard": "~4.1.2",
     "expo-location": "~15.1.1",
     "expo-sharing": "~11.2.2",
     "expo-status-bar": "~1.4.4",
