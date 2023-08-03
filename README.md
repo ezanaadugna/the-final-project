@@ -1,8 +1,39 @@
-# the-final-project
 
+# MapChat [![Uniting Awkward Enthusiasts with Monumental Charm!](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]
+MapChat is a React Native app built with Expo that allows architecture enthusiasts to explore buildings around them and generate pick up lines based on those buildings.
+[![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-000.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
 
-## colors:
+[![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
 
-yellow-gold: ffd100
-grey-background: 373737
-purple: 6d36c7
+Image Alt Text
+
+About
+Users can search for nearby architectural buildings on a map
+They can select a building to see photos and details
+An AI bot generates tailored pick up lines about the building
+Pick up lines can be shared and copied
+
+MapChat uses:
+React Native and Expo for the frontend
+Google Maps API for map data
+OpenAI for generating building-related pick up lines
+React Navigation for routing between screens
+Getting Started
+Prerequisites
+Node.js and npm
+Expo CLI - npm install -g expo-cli
+Expo Go app on your mobile device
+Installation
+Clone the repo
+git clone ------------
+
+#Install dependencies
+npm install
+
+#For Testing 
+npm install @testing-library/react-native babel-jest @babel/preset-env jest-expo react-test-renderer axios-mock-adapter expo-clipboard --save-dev
+
+#Start the dev server
+npm start & npx expo
+
+Open the Expo Go app and scan the QR code to run the app
