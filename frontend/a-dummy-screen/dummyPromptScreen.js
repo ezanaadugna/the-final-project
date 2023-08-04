@@ -52,7 +52,7 @@ const DummyPromptScreen = ( {navigation}) => {
   useEffect(() => {
     // Fetch the initial API response when the component mounts
     fetchPickupLine();
-  }, []);
+  }, [currentPromptIndex]);
 
   const fetchPickupLine = () => {
     // Prepare the data to be sent to the server
