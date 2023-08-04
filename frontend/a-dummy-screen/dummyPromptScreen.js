@@ -78,6 +78,9 @@ const DummyPromptScreen = ( {navigation}) => {
           updatedPrompts[currentPromptIndex].generatedPrompt = pickupLine;
           return updatedPrompts;
         });
+
+        setCurrentPromptIndex((prevIndex) => prevIndex + 1);
+
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -87,7 +90,7 @@ const DummyPromptScreen = ( {navigation}) => {
 
   const handleCardRemoved = () => {
     // Update the currentPromptIndex and fetch new response when a card is removed (swiped)
-    setCurrentPromptIndex((prevIndex) => prevIndex + 1);
+    //setCurrentPromptIndex((prevIndex) => prevIndex + 1);
     fetchPickupLine();
   };
 
