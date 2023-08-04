@@ -91,7 +91,7 @@ const DummyPromptScreen = ( {navigation}) => {
   const handleCardRemoved = () => {
     // Update the currentPromptIndex and fetch new response when a card is removed (swiped)
     //setCurrentPromptIndex((prevIndex) => prevIndex + 1);
-    //fetchPickupLine();
+    fetchPickupLine();
   };
 
   const handleCopyPrompt = (promptText) => {
